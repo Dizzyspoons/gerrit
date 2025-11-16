@@ -1,0 +1,3628 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- Fixed viewport meta tag -->
+    <meta name="viewport" content="width=device-width, initial-scale=0.85, maximum-scale=5.0, user-scalable=yes">
+    <title>Skirk Bot - Ultimate Discord Experience | Genshin Impact Gaming Bot</title>
+    <meta name="description" content="Skirk Bot is the ultimate Discord bot for Genshin Impact fans. Hunt monsters, collect characters, build your dream team, and enjoy premium features with subscription tiers.">
+    <meta name="keywords" content="Discord bot, Genshin Impact, gaming, Skirk Bot, monster hunting, character collection, Discord gaming">
+    <meta name="author" content="Galaxy Hunter">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Skirk Bot - Ultimate Discord Experience">
+    <meta property="og:description" content="The ultimate Discord bot for Genshin Impact fans. Hunt monsters, collect characters, and build your dream team!">
+    <meta property="og:image" content="https://i.postimg.cc/B6J0nqsW/a48e6a9947c310e5ec6dbfc2bdb29ef2.jpg">
+    <meta property="og:url" content="https://skirk-github-io-iota.vercel.app/">
+    <meta property="og:type" content="website">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Skirk Bot - Ultimate Discord Experience">
+    <meta name="twitter:description" content="The ultimate Discord bot for Genshin Impact fans. Hunt monsters, collect characters, and build your dream team!">
+    <meta name="twitter:image" content="https://i.postimg.cc/B6J0nqsW/a48e6a9947c310e5ec6dbfc2bdb29ef2.jpg">
+    
+    <link rel="icon" type="image/x-icon" href="https://i.postimg.cc/B6J0nqsW/a48e6a9947c310e5ec6dbfc2bdb29ef2.jpg">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            /* Ultra-Enhanced Galactic Theme */
+            --primary: #7c3aed;
+            --primary-light: #8b5cf6;
+            --primary-dark: #6d28d9;
+            --secondary: #a855f7;
+            --accent: #ec4899;
+            --accent-light: #f472b6;
+            --dark: #0a0a1a;
+            --darker: #050510;
+            --light: #f8fafc;
+            --text: #f1f5f9;
+            --text-secondary: #cbd5e1;
+            --text-muted: #94a3b8;
+            --gradient: linear-gradient(135deg, #7c3aed 0%, #a855f7 25%, #ec4899 50%, #f472b6 75%, #8b5cf6 100%);
+            --gradient-alt: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+            --glow: 0 0 20px rgba(124, 58, 237, 0.8);
+            --glow-accent: 0 0 15px rgba(236, 72, 153, 0.8);
+            --cosmic-blue: #0a192f;
+            --deep-purple: #1a0033;
+            --neon-pink: #ff006e;
+            --neon-blue: #00f5ff;
+            --success: #10b981;
+            --warning: #f59e0b;
+            --error: #ef4444;
+            --info: #3b82f6;
+            --glass: rgba(255, 255, 255, 0.08);
+            --glass-heavy: rgba(255, 255, 255, 0.12);
+            --glass-border: rgba(255, 255, 255, 0.15);
+            --card-bg: rgba(10, 10, 26, 0.85);
+            --section-bg: rgba(5, 5, 16, 0.9);
+            --nav-bg: rgba(10, 10, 26, 0.95);
+            --card-highlight: rgba(124, 58, 237, 0.25);
+            --command-bg: rgba(30, 30, 60, 0.6);
+            --command-hover: rgba(50, 50, 100, 0.8);
+            --shadow-xl: 0 15px 30px rgba(0, 0, 0, 0.5);
+            --shadow-2xl: 0 20px 35px rgba(0, 0, 0, 0.6);
+            --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            --transition-bounce: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        }
+        
+        /* Enhanced Light Mode */
+        .light-mode {
+            --primary: #7c3aed;
+            --primary-light: #8b5cf6;
+            --primary-dark: #6d28d9;
+            --secondary: #a855f7;
+            --accent: #ec4899;
+            --accent-light: #f472b6;
+            --dark: #f8fafc;
+            --darker: #f1f5f9;
+            --light: #1e293b;
+            --text: #1e293b;
+            --text-secondary: #475569;
+            --text-muted: #64748b;
+            --gradient: linear-gradient(135deg, #7c3aed 0%, #a855f7 25%, #ec4899 50%, #f472b6 75%, #8b5cf6 100%);
+            --gradient-alt: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+            --glow: 0 0 20px rgba(124, 58, 237, 0.6);
+            --glow-accent: 0 0 15px rgba(236, 72, 153, 0.6);
+            --cosmic-blue: #f8fafc;
+            --deep-purple: #f1f5f9;
+            --neon-pink: #ec4899;
+            --neon-blue: #7c3aed;
+            --success: #10b981;
+            --warning: #f59e0b;
+            --error: #ef4444;
+            --info: #3b82f6;
+            --glass: rgba(0, 0, 0, 0.05);
+            --glass-heavy: rgba(0, 0, 0, 0.08);
+            --glass-border: rgba(0, 0, 0, 0.1);
+            --card-bg: rgba(255, 255, 255, 0.9);
+            --section-bg: rgba(248, 249, 250, 0.95);
+            --nav-bg: rgba(255, 255, 255, 0.98);
+            --card-highlight: rgba(124, 58, 237, 0.15);
+            --command-bg: rgba(240, 240, 255, 0.6);
+            --command-hover: rgba(220, 220, 255, 0.8);
+            --shadow-xl: 0 15px 30px rgba(0, 0, 0, 0.15);
+            --shadow-2xl: 0 20px 35px rgba(0, 0, 0, 0.2);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+            /* Prevent zoom issues */
+            height: 100%;
+            width: 100%;
+            overflow-x: hidden;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.5;
+            color: var(--text);
+            background-color: var(--darker);
+            overflow-x: hidden;
+            position: relative;
+            transition: background-color 0.5s ease, color 0.5s ease;
+            min-height: 100vh;
+            width: 100%;
+            /* Prevent content from being cut off */
+            padding: 0;
+            margin: 0;
+        }
+        
+        /* Container fixes */
+        .container {
+            width: 95%;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 15px;
+            position: relative;
+        }
+        
+        /* Enhanced Typography */
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Orbitron', sans-serif;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+        
+        p {
+            font-family: 'Inter', sans-serif;
+            font-weight: 400;
+        }
+        
+        /* Scrollbar Styling */
+        ::-webkit-scrollbar {
+            width: 12px;
+        }
+        
+        ::-webkit-scrollbar-track {
+            background: var(--darker);
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            background: var(--gradient);
+            border-radius: 6px;
+        }
+        
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--primary);
+        }
+        
+        /* Selection Styling */
+        ::selection {
+            background: var(--primary);
+            color: white;
+        }
+        
+        /* Enhanced Ripple Effect */
+        .ripple {
+            position: absolute;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0) 70%);
+            transform: scale(0);
+            animation: ripple-animation 1s ease-out;
+            pointer-events: none;
+        }
+        
+        @keyframes ripple-animation {
+            to {
+                transform: scale(5);
+                opacity: 0;
+            }
+        }
+        
+        /* Enhanced Particle Explosion */
+        .particle-explosion {
+            position: fixed;
+            pointer-events: none;
+            z-index: 9999;
+        }
+        
+        .particle {
+            position: absolute;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            pointer-events: none;
+            box-shadow: 0 0 15px currentColor;
+        }
+        
+        /* Enhanced Shockwave Effect */
+        .shockwave {
+            position: absolute;
+            border-radius: 50%;
+            border: 3px solid;
+            opacity: 0;
+            animation: shockwave-animation 1s ease-out;
+            pointer-events: none;
+        }
+        
+        @keyframes shockwave-animation {
+            0% {
+                width: 0;
+                height: 0;
+                opacity: 1;
+            }
+            100% {
+                width: 500px;
+                height: 500px;
+                opacity: 0;
+            }
+        }
+        
+        /* Ultra-Enhanced Glitch Text Effect */
+        .glitch {
+            position: relative;
+            color: white;
+            font-size: clamp(2.2rem, 6vw, 3.8rem);
+            font-weight: 900;
+            text-transform: uppercase;
+            text-shadow: 0.03em 0 0 rgba(124, 58, 237, 0.9),
+                         -0.03em -0.015em 0 rgba(236, 72, 153, 0.9),
+                         0.015em 0.025em 0 rgba(0, 245, 255, 0.9);
+            animation: glitch 1s infinite;
+            letter-spacing: 0.05em;
+        }
+        
+        .glitch::before,
+        .glitch::after {
+            content: attr(data-text);
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        
+        .glitch::before {
+            animation: glitch-1 0.8s infinite;
+            color: #ec4899;
+            z-index: -1;
+        }
+        
+        .glitch::after {
+            animation: glitch-2 0.8s infinite;
+            color: #00f5ff;
+            z-index: -2;
+        }
+        
+        @keyframes glitch {
+            0%, 100% { 
+                text-shadow: 0.03em 0 0 rgba(124, 58, 237, 1), 
+                             -0.03em -0.015em 0 rgba(236, 72, 153, 1), 
+                             0.015em 0.025em 0 rgba(0, 245, 255, 1); 
+            }
+            14% { 
+                text-shadow: 0.03em 0 0 rgba(124, 58, 237, 1), 
+                             -0.03em -0.015em 0 rgba(236, 72, 153, 1), 
+                             0.015em 0.025em 0 rgba(0, 245, 255, 1);
+            }
+            15% { 
+                text-shadow: -0.03em -0.015em 0 rgba(236, 72, 153, 1), 
+                             0.015em 0.015em 0 rgba(0, 245, 255, 1), 
+                             -0.03em -0.025em 0 rgba(124, 58, 237, 1);
+            }
+            49% { 
+                text-shadow: -0.03em -0.015em 0 rgba(124, 58, 237, 1), 
+                             0.015em 0.015em 0 rgba(236, 72, 153, 1), 
+                             -0.03em -0.025em 0 rgba(0, 245, 255, 1);
+            }
+            50% { 
+                text-shadow: 0.015em 0.025em 0 rgba(236, 72, 153, 1), 
+                             0.03em 0 0 rgba(124, 58, 237, 1), 
+                             0 -0.025em 0 rgba(0, 245, 255, 1);
+            }
+            99% { 
+                text-shadow: 0.015em 0.025em 0 rgba(124, 58, 237, 1), 
+                             0.03em 0 0 rgba(236, 72, 153, 1), 
+                             0 -0.025em 0 rgba(0, 245, 255, 1);
+            }
+        }
+        
+        @keyframes glitch-1 {
+            0%, 100% { clip-path: inset(0 0 0 0); transform: translate(0); }
+            20% { clip-path: inset(20% 0 30% 0); transform: translate(-8px); }
+            40% { clip-path: inset(50% 0 20% 0); transform: translate(8px); }
+            60% { clip-path: inset(10% 0 60% 0); transform: translate(5px); }
+            80% { clip-path: inset(80% 0 5% 0); transform: translate(-5px); }
+        }
+        
+        @keyframes glitch-2 {
+            0%, 100% { clip-path: inset(0 0 0 0); transform: translate(0); }
+            20% { clip-path: inset(60% 0 10% 0); transform: translate(8px); }
+            40% { clip-path: inset(20% 0 50% 0); transform: translate(-8px); }
+            60% { clip-path: inset(30% 0 40% 0); transform: translate(5px); }
+            80% { clip-path: inset(5% 0 80% 0); transform: translate(-5px); }
+        }
+        
+        /* Enhanced Theme Toggle */
+        .theme-toggle {
+            position: fixed;
+            top: 15px;
+            right: 15px;
+            z-index: 1001;
+            background: var(--glass-heavy);
+            backdrop-filter: blur(20px);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+            border: 2px solid var(--glass-border);
+            transition: var(--transition-bounce);
+        }
+        
+        .theme-toggle:hover {
+            transform: scale(1.08) rotate(15deg);
+            box-shadow: 0 0 40px rgba(124, 58, 237, 0.9);
+            border-color: var(--primary);
+        }
+        
+        .theme-toggle i {
+            font-size: 1.4rem;
+            color: var(--text);
+            transition: var(--transition-smooth);
+        }
+        
+        /* Enhanced Back to Top Button */
+        .back-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: var(--gradient);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition-bounce);
+            z-index: 999;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+            border: none;
+            font-size: 1.3rem;
+        }
+        
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .back-to-top:hover {
+            transform: translateY(-5px) scale(1.08) rotate(360deg);
+            box-shadow: 0 20px 50px rgba(124, 58, 237, 0.6);
+        }
+        
+        /* Enhanced Stats Badge */
+        .stats-badge {
+            position: fixed;
+            top: 80px;
+            right: 15px;
+            background: var(--glass-heavy);
+            backdrop-filter: blur(20px);
+            padding: 15px;
+            border-radius: 25px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+            border: 2px solid var(--glass-border);
+            z-index: 999;
+            transition: var(--transition-smooth);
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            min-width: 180px;
+        }
+        
+        .light-mode .stats-badge {
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        }
+        
+        .stat-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--text);
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+        
+        .stat-item i {
+            color: var(--accent);
+            font-size: 1.1rem;
+        }
+        
+        .stat-value {
+            font-weight: 800;
+            color: var(--neon-blue);
+            font-size: 1rem;
+        }
+        
+        /* Top.gg Vote Widget */
+        .topgg-widget {
+            position: fixed;
+            bottom: 80px;
+            right: 15px;
+            background: var(--glass-heavy);
+            backdrop-filter: blur(20px);
+            padding: 10px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+            border: 2px solid var(--glass-border);
+            z-index: 999;
+            transition: var(--transition-smooth);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .light-mode .topgg-widget {
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        }
+        
+        .topgg-widget a {
+            text-decoration: none;
+            transition: var(--transition-smooth);
+        }
+        
+        .topgg-widget a:hover {
+            transform: scale(1.05);
+        }
+        
+        .topgg-widget img {
+            max-width: 100%;
+            border-radius: 10px;
+            transform: scale(0.85);
+        }
+        
+        .topgg-widget-text {
+            color: var(--text);
+            font-weight: 600;
+            font-size: 0.8rem;
+            text-align: center;
+        }
+        
+        /* Ultra-Enhanced Cosmic Background */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
+            z-index: -3;
+            transition: opacity 0.5s ease;
+        }
+        
+        .light-mode body::before {
+            background: radial-gradient(ellipse at bottom, #f8fafc 0%, #e2e8f0 100%);
+            opacity: 0.8;
+        }
+        
+        /* Enhanced Animated Nebula */
+        .nebula {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 20% 50%, rgba(124, 58, 237, 0.25) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(236, 72, 153, 0.2) 0%, transparent 50%),
+                radial-gradient(circle at 40% 80%, rgba(0, 245, 255, 0.2) 0%, transparent 50%);
+            z-index: -2;
+            animation: nebulaDrift 200s infinite linear;
+            transition: opacity 0.5s ease;
+        }
+        
+        .light-mode .nebula {
+            opacity: 0.5;
+        }
+        
+        @keyframes nebulaDrift {
+            0% { transform: translate(0, 0) rotate(0deg); }
+            100% { transform: translate(-100px, -100px) rotate(360deg); }
+        }
+        
+        /* Enhanced Starfield */
+        .stars {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+        
+        .star {
+            position: absolute;
+            background: linear-gradient(45deg, white, rgba(255, 255, 255, 0.9));
+            border-radius: 50%;
+            animation: twinkle 5s infinite;
+            will-change: opacity, transform;
+        }
+        
+        @keyframes twinkle {
+            0%, 100% { opacity: 0.3; transform: scale(1); }
+            50% { opacity: 1; transform: scale(1.3); }
+        }
+        
+        /* Enhanced Shooting Stars */
+        .shooting-star {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 4px;
+            background: linear-gradient(45deg, white, #00f5ff);
+            border-radius: 50%;
+            box-shadow: 0 0 20px 4px rgba(255, 255, 255, 1);
+            z-index: -1;
+            animation: shootingStar 5s linear infinite;
+            opacity: 0;
+            will-change: transform, opacity;
+        }
+        
+        @keyframes shootingStar {
+            0% {
+                transform: translate(0, 0) rotate(315deg);
+                opacity: 1;
+            }
+            70% {
+                opacity: 1;
+            }
+            100% {
+                transform: translate(-800px, 800px) rotate(315deg);
+                opacity: 0;
+            }
+        }
+        
+        .shooting-star::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 500px;
+            height: 3px;
+            background: linear-gradient(to left, transparent, rgba(255, 255, 255, 1), rgba(0, 245, 255, 0.9));
+            transform: translateX(-50%) translateY(-50%);
+        }
+        
+        /* Enhanced Floating Particles */
+        .particles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+        
+        .particle-bg {
+            position: absolute;
+            width: 5px;
+            height: 5px;
+            border-radius: 50%;
+            background: radial-gradient(circle, var(--primary) 0%, transparent 70%);
+            box-shadow: 0 0 15px 3px var(--primary);
+            animation: float 30s infinite linear;
+            opacity: 0;
+            will-change: transform, opacity;
+        }
+        
+        @keyframes float {
+            0% {
+                transform: translateY(100vh) translateX(0) rotate(0deg);
+                opacity: 0;
+            }
+            10% {
+                opacity: 1;
+            }
+            90% {
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-100vh) translateX(200px) rotate(720deg);
+                opacity: 0;
+            }
+        }
+        
+        /* Enhanced Cosmic Grid */
+        .cosmic-grid {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                linear-gradient(rgba(124, 58, 237, 0.12) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(124, 58, 237, 0.12) 1px, transparent 1px);
+            background-size: 100px 100px;
+            z-index: -1;
+            opacity: 0.2;
+            animation: gridMove 40s linear infinite;
+        }
+        
+        @keyframes gridMove {
+            0% { transform: translate(0, 0); }
+            100% { transform: translate(100px, 100px); }
+        }
+        
+        /* Enhanced Navigation */
+        nav {
+            background: var(--nav-bg);
+            backdrop-filter: blur(25px);
+            color: white;
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.6), 0 0 30px rgba(124, 58, 237, 0.5);
+            border-bottom: 2px solid var(--glass-border);
+            transition: var(--transition-smooth);
+        }
+        
+        .light-mode nav {
+            box-shadow: 0 10px 40px rgba(0,0,0,0.15), 0 0 30px rgba(124, 58, 237, 0.4);
+        }
+        
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.6rem;
+            font-weight: 900;
+            display: flex;
+            align-items: center;
+            color: var(--text);
+            text-shadow: 0 0 20px rgba(124, 58, 237, 0.9);
+            transition: var(--transition-bounce);
+            position: relative;
+            overflow: hidden;
+            text-decoration: none;
+        }
+        
+        .logo:hover {
+            transform: scale(1.05);
+            text-shadow: 0 0 30px rgba(124, 58, 237, 1);
+        }
+        
+        .logo-img {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            margin-right: 12px;
+            border: 2px solid var(--accent);
+            box-shadow: 0 0 25px rgba(236, 72, 153, 0.9);
+            background: url('https://i.postimg.cc/ZKpMW6GB/Generated_Image_October_15__2025_-_1_46AM-removebg-preview_cropped.png') center center;
+            background-size: cover;
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); box-shadow: 0 0 25px rgba(236, 72, 153, 0.9); }
+            50% { transform: scale(1.15); box-shadow: 0 0 35px rgba(236, 72, 153, 1); }
+            100% { transform: scale(1); box-shadow: 0 0 25px rgba(236, 72, 153, 0.9); }
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 1.5rem;
+        }
+        
+        .nav-links li {
+            position: relative;
+        }
+        
+        .nav-links a {
+            color: var(--text);
+            text-decoration: none;
+            transition: var(--transition-smooth);
+            font-weight: 700;
+            position: relative;
+            padding: 8px 0;
+            display: inline-block;
+            font-size: 0.95rem;
+        }
+        
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--gradient);
+            transition: width 0.5s ease;
+            border-radius: 2px;
+        }
+        
+        .nav-links a:hover {
+            color: var(--accent);
+            text-shadow: 0 0 15px rgba(236, 72, 153, 0.9);
+            transform: translateY(-3px);
+        }
+        
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+        
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            background: none;
+            border: none;
+            padding: 8px;
+        }
+        
+        .menu-toggle span {
+            width: 35px;
+            height: 4px;
+            background: var(--text);
+            margin: 5px 0;
+            transition: 0.3s;
+            border-radius: 3px;
+        }
+        
+        /* Enhanced Hero Section */
+        .hero {
+            padding: 120px 0 80px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            min-height: 70vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url("https://i.postimg.cc/7Ls9GFHn/skirk-skirk-burst.gif") no-repeat center center;
+            background-size: cover;
+            opacity: 0.35;
+            z-index: 0;
+            transition: opacity 0.5s ease;
+        }
+        
+        .light-mode .hero::before {
+            opacity: 0.25;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 900px;
+        }
+        
+        .hero h1 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            margin-bottom: 1.5rem;
+            background: linear-gradient(135deg, #7c3aed 0%, #a855f7 25%, #ec4899 50%, #f472b6 75%, #8b5cf6 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            letter-spacing: 0.05em;
+            position: relative;
+            display: inline-block;
+            font-weight: 900;
+        }
+        
+        .light-mode .hero h1 {
+            background: linear-gradient(135deg, #7c3aed 0%, #a855f7 50%, #ec4899 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+        }
+        
+        .hero p {
+            font-size: clamp(1rem, 2vw, 1.3rem);
+            margin-bottom: 2.5rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            color: var(--text-secondary);
+            text-shadow: 0 0 20px rgba(124, 58, 237, 0.7);
+            font-weight: 600;
+            line-height: 1.6;
+        }
+        
+        .light-mode .hero p {
+            color: var(--text-secondary);
+            text-shadow: none;
+        }
+        
+        .btn-group {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+        
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 14px 30px;
+            background: var(--gradient);
+            color: white;
+            text-decoration: none;
+            font-weight: 800;
+            transition: var(--transition-bounce);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.4), 0 0 25px rgba(124, 58, 237, 0.7);
+            font-size: 1rem;
+            border: 2px solid rgba(124, 58, 237, 0.5);
+            position: relative;
+            overflow: hidden;
+            transform: translateY(0);
+            border-radius: 35px;
+            cursor: pointer;
+        }
+        
+        .light-mode .btn {
+            background: var(--gradient);
+            color: white;
+            border: 2px solid rgba(124, 58, 237, 0.5);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2), 0 0 25px rgba(124, 58, 237, 0.6);
+        }
+        
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+            transition: left 0.8s;
+        }
+        
+        .btn:hover::before {
+            left: 100%;
+        }
+        
+        .btn:hover {
+            transform: translateY(-6px) scale(1.05);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.5), 0 0 40px rgba(124, 58, 237, 0.9);
+        }
+        
+        .light-mode .btn:hover {
+            box-shadow: 0 20px 50px rgba(0,0,0,0.25), 0 0 40px rgba(124, 58, 237, 0.7);
+        }
+        
+        .btn-outline {
+            background: transparent;
+            border: 2px solid var(--accent);
+            color: var(--accent);
+        }
+        
+        .btn-outline:hover {
+            background: rgba(236, 72, 153, 0.25);
+            color: white;
+            box-shadow: 0 0 40px rgba(236, 72, 153, 0.9);
+            border-color: var(--accent);
+        }
+        
+        .btn-test {
+            background: linear-gradient(135deg, var(--info), var(--accent));
+            border-color: var(--info);
+        }
+        
+        .btn-test:hover {
+            box-shadow: 0 20px 50px rgba(0,0,0,0.5), 0 0 40px rgba(236, 72, 153, 0.9);
+        }
+        
+        /* Enhanced How Bot Works Section */
+        .how-it-works {
+            padding: 80px 0;
+            background: linear-gradient(135deg, var(--section-bg), rgba(10, 10, 26, 0.9));
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .how-it-works::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('') no-repeat center center;
+            background-size: cover;
+            opacity: 0.05;
+            z-index: -1;
+        }
+        
+        .steps-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .step-card {
+            background: var(--card-bg);
+            backdrop-filter: blur(20px);
+            border-radius: 18px;
+            padding: 2rem;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.4), 0 0 30px rgba(124, 58, 237, 0.4);
+            border: 1px solid var(--glass-border);
+            transition: var(--transition-bounce);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .light-mode .step-card {
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15), 0 0 30px rgba(124, 58, 237, 0.3);
+        }
+        
+        .step-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 30px 60px rgba(0,0,0,0.5), 0 0 50px rgba(124, 58, 237, 0.7);
+            border-color: var(--primary);
+        }
+        
+        .step-number {
+            position: absolute;
+            top: 7px;
+            left: 10px;
+            width: 45px;
+            height: 45px;
+            background: var(--gradient);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 900;
+            font-size: 1.3rem;
+            box-shadow: 0 0 25px rgba(124, 58, 237, 0.9);
+            border: 2px solid var(--glass-border);
+        }
+        
+        .step-icon {
+            font-size: 2.5rem;
+            color: var(--neon-blue);
+            margin-bottom: 1.2rem;
+            text-align: center;
+            filter: drop-shadow(0 0 15px rgba(0, 245, 255, 0.8));
+        }
+        
+        .step-title {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.3rem;
+            color: var(--text);
+            margin-bottom: 1.2rem;
+            text-align: center;
+            font-weight: 800;
+        }
+        
+        .step-desc {
+            color: var(--text-secondary);
+            text-align: center;
+            line-height: 1.8;
+            font-size: 1rem;
+        }
+        
+        .command-example {
+            background: var(--command-bg);
+            padding: 1.2rem 2rem;
+            border-radius: 15px;
+            margin-top: 2rem;
+            font-family: 'JetBrains Mono', monospace;
+            color: var(--neon-blue);
+            text-align: center;
+            border: 2px solid rgba(124, 58, 237, 0.4);
+            font-size: 1.2rem;
+            font-weight: 700;
+        }
+        
+        /* Enhanced Features Section */
+        .features {
+            padding: 80px 0;
+            background: linear-gradient(135deg, var(--section-bg), rgba(5, 5, 16, 0.95));
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .features::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('') no-repeat center center;
+            background-size: cover;
+            opacity: 0.05;
+            z-index: -1;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+            font-family: 'Orbitron', sans-serif;
+            font-size: clamp(2rem, 5vw, 2.5rem);
+            color: var(--text);
+            position: relative;
+            display: inline-block;
+            width: 100%;
+            text-shadow: 0 0 25px rgba(124, 58, 237, 0.9);
+            font-weight: 900;
+        }
+        
+        .light-mode .section-title {
+            text-shadow: none;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 150px;
+            height: 5px;
+            background: var(--gradient);
+            animation: expandWidth 2s ease-out;
+            border-radius: 3px;
+        }
+        
+        @keyframes expandWidth {
+            from { width: 0; }
+            to { width: 150px; }
+        }
+        
+        /* Enhanced Feature Display */
+        .galactic-features {
+            display: flex;
+            flex-direction: column;
+            gap: 2.5rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        .feature-category {
+            background: var(--card-bg);
+            backdrop-filter: blur(20px);
+            border-radius: 20px;
+            padding: 2.5rem;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.4), 0 0 30px rgba(124, 58, 237, 0.4);
+            border: 2px solid var(--glass-border);
+            position: relative;
+            overflow: hidden;
+            transition: var(--transition-bounce);
+        }
+        
+        .light-mode .feature-category {
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15), 0 0 30px rgba(124, 58, 237, 0.3);
+        }
+        
+        .feature-category:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 30px 60px rgba(0,0,0,0.5), 0 0 50px rgba(124, 58, 237, 0.7);
+            border-color: var(--primary);
+        }
+        
+        .feature-category::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 8px;
+            background: var(--gradient);
+        }
+        
+        .category-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 2rem;
+            gap: 1.5rem;
+        }
+        
+        .category-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: white;
+            box-shadow: 0 0 30px rgba(124, 58, 237, 0.7);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .category-icon::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, rgba(255,255,255,0.4) 0%, transparent 70%);
+            animation: pulse 3s infinite;
+        }
+        
+        .gameplay-icon {
+            background: linear-gradient(135deg, #7c3aed 0%, #a855f7 100%);
+        }
+        
+        .shipping-icon {
+            background: linear-gradient(135deg, #ec4899 0%, #f472b6 100%);
+        }
+        
+        .system-icon {
+            background: linear-gradient(135deg, #3b82f6 0%, #06b6d4 100%);
+        }
+        
+        .category-title {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 2rem;
+            color: var(--text);
+            text-shadow: 0 0 20px rgba(124, 58, 237, 0.7);
+            font-weight: 900;
+        }
+        
+        .light-mode .category-title {
+            text-shadow: none;
+        }
+        
+        .commands-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .command-item {
+            background: var(--command-bg);
+            padding: 1.5rem;
+            border-radius: 15px;
+            transition: var(--transition-bounce);
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            border: 2px solid rgba(124, 58, 237, 0.4);
+        }
+        
+        .light-mode .command-item {
+            border: 2px solid rgba(124, 58, 237, 0.3);
+        }
+        
+        .command-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.8s ease;
+        }
+        
+        .command-item:hover::before {
+            left: 100%;
+        }
+        
+        .command-item:hover {
+            transform: translateY(-5px) scale(1.02);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+            background: var(--command-hover);
+            border-color: var(--primary);
+        }
+        
+        .command-name {
+            font-family: 'JetBrains Mono', monospace;
+            font-weight: 800;
+            color: var(--neon-blue);
+            font-size: 1.1rem;
+            margin-bottom: 0.8rem;
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+        }
+        
+        .command-desc {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+        
+        .command-tag {
+            background: var(--accent);
+            color: white;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 800;
+            position: absolute;
+            top: 0.8rem;
+            right: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        
+        /* Enhanced Reactions Section */
+        .reactions {
+            padding: 80px 0;
+            background: linear-gradient(135deg, var(--section-bg), rgba(10, 10, 26, 0.9));
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .reactions::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('') no-repeat center center;
+            background-size: cover;
+            opacity: 0.05;
+            z-index: -1;
+        }
+        
+        .reactions-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-top: 3rem;
+        }
+        
+        .reaction-card {
+            background: var(--card-bg);
+            backdrop-filter: blur(20px);
+            border-radius: 20px;
+            overflow: hidden;
+            transition: var(--transition-bounce);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.4), 0 0 25px rgba(124, 58, 237, 0.4);
+            position: relative;
+            border: 2px solid var(--glass-border);
+        }
+        
+        .light-mode .reaction-card {
+            box-shadow: 0 15px 35px rgba(0,0,0,0.15), 0 0 25px rgba(124, 58, 237, 0.3);
+        }
+        
+        .reaction-card:hover {
+            transform: translateY(-8px) scale(1.05);
+            box-shadow: 0 25px 50px rgba(0,0,0,0.5), 0 0 40px rgba(124, 58, 237, 0.7);
+            border-color: var(--primary);
+        }
+        
+        .reaction-gif {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .reaction-card:hover .reaction-gif {
+            transform: scale(1.1);
+        }
+        
+        .reaction-info {
+            padding: 1.5rem;
+            text-align: center;
+        }
+        
+        .reaction-name {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.2rem;
+            color: var(--text);
+            margin-bottom: 0.8rem;
+            font-weight: 800;
+        }
+        
+        .reaction-command {
+            font-family: 'JetBrains Mono', monospace;
+            color: var(--neon-blue);
+            font-size: 0.9rem;
+            font-weight: 700;
+        }
+        
+        /* Enhanced Video Section */
+        .video-section {
+            padding: 80px 0;
+            background: linear-gradient(135deg, var(--section-bg), rgba(10, 10, 26, 0.9));
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .video-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('') no-repeat center center;
+            background-size: cover;
+            opacity: 0.05;
+            z-index: -1;
+        }
+        
+        .video-container {
+            max-width: 900px;
+            margin: 0 auto;
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.4), 0 0 30px rgba(124, 58, 237, 0.4);
+            border: 3px solid var(--glass-border);
+        }
+        
+        .light-mode .video-container {
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15), 0 0 30px rgba(124, 58, 237, 0.3);
+        }
+        
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+            border-radius: 17px;
+        }
+        
+        /* Enhanced Premium Section */
+        #premium-info {
+            padding: 80px 0;
+            background: linear-gradient(135deg, var(--section-bg), rgba(10, 10, 26, 0.9));
+            position: relative;
+            overflow: hidden;
+        }
+        
+        #premium-info::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('') no-repeat center center;
+            background-size: cover;
+            opacity: 0.05;
+            z-index: -1;
+        }
+        
+        .tier-card {
+            background: var(--card-bg);
+            backdrop-filter: blur(20px);
+            padding: 2.5rem;
+            margin-bottom: 2.5rem;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.4), 0 0 30px rgba(124, 58, 237, 0.4);
+            position: relative;
+            overflow: hidden;
+            transition: var(--transition-bounce);
+            border: 2px solid var(--glass-border);
+            transform: translateY(0);
+            opacity: 0;
+            animation: slideUp 1s forwards;
+            border-radius: 25px;
+        }
+        
+        .light-mode .tier-card {
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15), 0 0 30px rgba(124, 58, 237, 0.3);
+        }
+        
+        .tier-card:nth-child(2) { animation-delay: 0.3s; }
+        .tier-card:nth-child(3) { animation-delay: 0.6s; }
+        .tier-card:nth-child(4) { animation-delay: 0.9s; }
+        
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .tier-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 30px 60px rgba(0,0,0,0.5), 0 0 50px rgba(124, 58, 237, 0.7);
+            border-color: var(--primary);
+        }
+        
+        .tier-card.normal-tier {
+            border-left: 8px solid var(--primary);
+        }
+        
+        .tier-card.plus-tier {
+            border-left: 8px solid var(--secondary);
+        }
+        
+        .tier-card.premium-tier {
+            border-left: 8px solid var(--accent);
+        }
+        
+        .premium-badge {
+            position: absolute;
+            top: 40px;
+            right: -40px;
+            background: var(--gradient);
+            color: white;
+            padding: 0px 40px;
+            transform: rotate(45deg);
+            font-size: 0.8rem;
+            font-weight: 900;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.4);
+            text-shadow: 0 0 15px rgba(255, 255, 255, 0.6);
+            animation: pulse 0s infinite;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            border-radius: 10pc;
+        }
+        
+        .tier-card h3 {
+            color: var(--text);
+            margin-bottom: 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            font-family: 'Orbitron', sans-serif;
+            text-shadow: 0 0 20px rgba(124, 58, 237, 0.7);
+            font-weight: 900;
+            gap: 1rem;
+        }
+        
+        .light-mode .tier-card h3 {
+            text-shadow: none;
+        }
+        
+        .tier-card ul {
+            list-style: none;
+        }
+        
+        .tier-card li {
+            padding: 0.8rem 0;
+            border-bottom: 1px solid rgba(124, 58, 237, 0.3);
+            display: flex;
+            align-items: center;
+            transition: var(--transition-smooth);
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+        
+        .light-mode .tier-card li {
+            border-bottom: 1px solid rgba(124, 58, 237, 0.2);
+        }
+        
+        .tier-card li:hover {
+            padding-left: 15px;
+            background: rgba(124, 58, 237, 0.15);
+            border-radius: 10px;
+        }
+        
+        .tier-card li:last-child {
+            border-bottom: none;
+        }
+        
+        .tier-card li img {
+            margin-right: 15px;
+            height: 25px;
+        }
+        
+        .donation-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1.5rem;
+            margin-top: 3rem;
+        }
+        
+        .donation-tier {
+            background: var(--card-bg);
+            backdrop-filter: blur(20px);
+            padding: 1.8rem;
+            text-align: center;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.4), 0 0 25px rgba(124, 58, 237, 0.4);
+            transition: var(--transition-bounce);
+            border: 2px solid var(--glass-border);
+            transform: scale(1);
+            opacity: 0;
+            animation: popIn 0.8s forwards;
+            border-radius: 20px;
+        }
+        
+        .light-mode .donation-tier {
+            box-shadow: 0 15px 35px rgba(0,0,0,0.15), 0 0 25px rgba(124, 58, 237, 0.3);
+        }
+        
+        .donation-tier:nth-child(1) { animation-delay: 0.1s; }
+        .donation-tier:nth-child(2) { animation-delay: 0.2s; }
+        .donation-tier:nth-child(3) { animation-delay: 0.3s; }
+        .donation-tier:nth-child(4) { animation-delay: 0.4s; }
+        .donation-tier:nth-child(5) { animation-delay: 0.5s; }
+        .donation-tier:nth-child(6) { animation-delay: 0.6s; }
+        .donation-tier:nth-child(7) { animation-delay: 0.7s; }
+        
+        @keyframes popIn {
+            0% {
+                opacity: 0;
+                transform: scale(0.7);
+            }
+            80% {
+                transform: scale(1.08);
+            }
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+        
+        .donation-tier:hover {
+            transform: translateY(-10px) scale(1.05);
+            box-shadow: 0 25px 50px rgba(0,0,0,0.5), 0 0 40px rgba(124, 58, 237, 0.7);
+            border-color: var(--primary);
+        }
+        
+        .donation-tier h4 {
+            color: var(--secondary);
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+            font-family: 'Orbitron', sans-serif;
+            text-shadow: 0 0 20px rgba(168, 85, 247, 0.9);
+            font-weight: 900;
+        }
+        
+        .light-mode .donation-tier h4 {
+            text-shadow: none;
+        }
+        
+        .purchase-section {
+            text-align: center;
+            margin-top: 3rem;
+        }
+        
+        .purchase-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 15px;
+            background: var(--gradient);
+            color: white;
+            padding: 20px 40px;
+            font-weight: 900;
+            font-size: 1.2rem;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.4), 0 0 30px rgba(124, 58, 237, 0.7);
+            transition: var(--transition-bounce);
+            border: 2px solid rgba(124, 58, 237, 0.5);
+            position: relative;
+            overflow: hidden;
+            transform: translateY(0);
+            border-radius: 40px;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        
+        .light-mode .purchase-btn {
+            background: var(--gradient);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.2), 0 0 30px rgba(124, 58, 237, 0.6);
+            border: 2px solid rgba(124, 58, 237, 0.5);
+        }
+        
+        .purchase-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+            transition: left 0.8s;
+        }
+        
+        .purchase-btn:hover::before {
+            left: 100%;
+        }
+        
+        .purchase-btn:hover {
+            transform: translateY(-8px) scale(1.05);
+            box-shadow: 0 25px 50px rgba(0,0,0,0.5), 0 0 40px rgba(124, 58, 237, 0.9);
+        }
+        
+        .light-mode .purchase-btn:hover {
+            box-shadow: 0 25px 50px rgba(0,0,0,0.25), 0 0 40px rgba(124, 58, 237, 0.7);
+        }
+        
+        .purchase-btn i {
+            font-size: 1.5rem;
+        }
+        
+        /* Enhanced Policy Section */
+        #policy {
+            padding: 80px 0;
+            background: linear-gradient(135deg, var(--section-bg), rgba(5, 5, 16, 0.95));
+            position: relative;
+            overflow: hidden;
+        }
+        
+        #policy::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('') no-repeat center center;
+            background-size: cover;
+            opacity: 0.05;
+            z-index: -1;
+        }
+        
+        .policy-content {
+            max-width: 900px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            backdrop-filter: blur(20px);
+            padding: 3rem;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.4), 0 0 30px rgba(124, 58, 237, 0.4);
+            border: 2px solid var(--glass-border);
+            opacity: 0;
+            animation: fadeIn 1.5s forwards;
+            border-radius: 25px;
+        }
+        
+        .light-mode .policy-content {
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15), 0 0 30px rgba(124, 58, 237, 0.3);
+        }
+        
+        .policy-content h3 {
+            margin-top: 2.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--text);
+            font-size: 1.5rem;
+            font-family: 'Orbitron', sans-serif;
+            text-shadow: 0 0 20px rgba(124, 58, 237, 0.7);
+            font-weight: 800;
+        }
+        
+        .light-mode .policy-content h3 {
+            text-shadow: none;
+        }
+        
+        .policy-content h3.positive {
+            color: var(--success);
+            text-shadow: 0 0 20px rgba(16, 185, 129, 0.9);
+        }
+        
+        .policy-content h3.negative {
+            color: var(--error);
+            text-shadow: 0 0 20px rgba(239, 68, 68, 0.9);
+        }
+        
+        .policy-content h3.neutral {
+            color: var(--info);
+            text-shadow: 0 0 20px rgba(59, 130, 246, 0.9);
+        }
+        
+        .policy-content ul {
+            list-style-position: inside;
+            margin-bottom: 2rem;
+        }
+        
+        .policy-content li {
+            margin-bottom: 1rem;
+            transition: var(--transition-smooth);
+            font-size: 1rem;
+            line-height: 1.7;
+        }
+        
+        .policy-content li:hover {
+            transform: translateX(15px);
+            color: var(--accent);
+        }
+        
+        /* Enhanced Footer */
+        footer {
+            background: rgba(5, 5, 16, 0.95);
+            color: white;
+            padding: 40px 0 30px;
+            text-align: center;
+            border-top: 3px solid rgba(124, 58, 237, 0.5);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .light-mode footer {
+            background: rgba(248, 249, 250, 0.95);
+            color: var(--text);
+            border-top: 3px solid rgba(124, 58, 237, 0.4);
+        }
+        
+        footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 50% 0%, rgba(124, 58, 237, 0.2) 0%, transparent 70%);
+            z-index: -1;
+        }
+        
+        .footer-links {
+            margin-top: 2rem;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+        
+        .footer-links a {
+            color: var(--text);
+            text-decoration: none;
+            transition: var(--transition-smooth);
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+        
+        .footer-links a:hover {
+            color: var(--accent);
+            text-shadow: 0 0 15px rgba(236, 72, 153, 0.9);
+            transform: translateY(-6px);
+        }
+        
+        .footer-links i {
+            font-size: 1.2rem;
+        }
+        
+        .social-links {
+            margin-top: 2rem;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+        }
+        
+        .social-links a {
+            color: white;
+            font-size: 1.5rem;
+            transition: var(--transition-bounce);
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--glass-heavy);
+            border: 2px solid var(--glass-border);
+            border-radius: 50%;
+        }
+        
+        .light-mode .social-links a {
+            color: var(--text);
+            background: rgba(0, 0, 0, 0.05);
+            border: 2px solid rgba(0, 0, 0, 0.1);
+        }
+        
+        .social-links a:hover {
+            color: var(--accent);
+            transform: translateY(-8px) rotate(15deg) scale(1.1);
+            box-shadow: 0 0 30px rgba(236, 72, 153, 0.9);
+            border-color: var(--accent);
+            background: rgba(236, 72, 153, 0.15);
+        }
+        
+        /* Enhanced Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .fade-in {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 1.2s ease, transform 1.2s ease;
+        }
+        
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* Enhanced Loading Screen */
+        .loading-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--darker);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            transition: opacity 0.8s ease, visibility 0.8s ease;
+        }
+        
+        .loading-screen.hidden {
+            opacity: 0;
+            visibility: hidden;
+        }
+        
+        .loader {
+            width: 90px;
+            height: 90px;
+            border: 15px solid rgba(124, 58, 237, 0.2);
+            border-top-color: var(--primary);
+            animation: spin 1.2s linear infinite;
+            margin-bottom: 25px;
+            border-radius: 50%;
+        }
+        
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+        
+        .loading-text {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.5rem;
+            color: var(--text);
+            text-shadow: 0 0 20px rgba(124, 58, 237, 0.9);
+            font-weight: 700;
+        }
+        
+        /* Enhanced Mobile Optimizations */
+        @media (max-width: 992px) {
+            .hero h1 {
+                font-size: clamp(2.2rem, 5.5vw, 3.8rem);
+            }
+            
+            .hero p {
+                font-size: clamp(0.9rem, 2.5vw, 1.3rem);
+            }
+            
+            .section-title {
+                font-size: clamp(1.7rem, 4.5vw, 2.5rem);
+            }
+            
+            .stats-badge {
+                top: 70px;
+                right: 15px;
+                padding: 15px;
+                min-width: 160px;
+            }
+            
+            .stat-item {
+                font-size: 0.85rem;
+            }
+            
+            .category-title {
+                font-size: 1.7rem;
+            }
+            
+            .tier-card h3 {
+                font-size: 1.7rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .nav-links {
+                position: fixed;
+                top: 70px;
+                left: 0;
+                width: 100%;
+                background: rgba(10, 10, 26, 0.98);
+                backdrop-filter: blur(20px);
+                flex-direction: column;
+                align-items: center;
+                padding: 2.5rem 0;
+                clip-path: circle(0px at 90% -20%);
+                transition: all 0.8s ease-out;
+                pointer-events: none;
+                z-index: 999;
+                border-top: 2px solid rgba(124, 58, 237, 0.5);
+                gap: 1.5rem;
+            }
+            
+            .light-mode .nav-links {
+                background: rgba(255, 255, 255, 0.98);
+            }
+            
+            .nav-links.active {
+                clip-path: circle(1500px at 90% -20%);
+                pointer-events: all;
+            }
+            
+            .nav-links li {
+                margin: 0;
+            }
+            
+            .menu-toggle {
+                display: flex;
+            }
+            
+            .hero {
+                padding: 100px 0 70px;
+            }
+            
+            .hero h1 {
+                font-size: clamp(1.8rem, 5vw, 3rem);
+            }
+            
+            .hero p {
+                font-size: clamp(0.8rem, 2vw, 1.2rem);
+            }
+            
+            .section-title {
+                font-size: clamp(1.5rem, 4vw, 2rem);
+            }
+            
+            .commands-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .donation-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .footer-links {
+                flex-direction: column;
+                align-items: center;
+                gap: 1.5rem;
+            }
+            
+            .steps-container {
+                grid-template-columns: 1fr;
+                gap: 1.8rem;
+            }
+            
+            .step-card {
+                width: 90%;
+                max-width: 400px;
+                margin: 0 auto;
+            }
+            
+            .btn-group {
+                flex-direction: column;
+                align-items: center;
+                gap: 1.5rem;
+            }
+            
+            .btn {
+                width: 100%;
+                max-width: 320px;
+            }
+            
+            /* Reduce animations on mobile for better performance */
+            .nebula {
+                animation: none;
+            }
+            
+            .cosmic-grid {
+                animation: none;
+                opacity: 0.1;
+            }
+            
+            .particle-bg {
+                animation: none;
+            }
+            
+            .stats-badge {
+                display: none;
+            }
+            
+            .topgg-widget {
+                display: none;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .hero {
+                padding: 80px 0 60px;
+            }
+            
+            .hero h1 {
+                font-size: clamp(1.5rem, 4vw, 2.5rem);
+            }
+            
+            .donation-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .tier-card h3 {
+                font-size: 1.4rem;
+            }
+            
+            .policy-content {
+                padding: 2rem;
+            }
+            
+            .category-title {
+                font-size: 1.5rem;
+            }
+            
+            .feature-category {
+                padding: 2rem;
+            }
+            
+            .tier-card {
+                padding: 2rem;
+            }
+            
+            /* Further reduce animations on small screens */
+            .star {
+                animation: none;
+            }
+            
+            .shooting-star {
+                animation: none;
+            }
+            
+            .glitch {
+                animation: none;
+            }
+            
+            .glitch::before,
+            .glitch::after {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    
+    <!-- Loading Screen -->
+    <div class="loading-screen" id="loadingScreen">
+        <div class="loader"></div>
+        <div class="loading-text">Loading Skirk Bot...</div>
+    </div>
+    
+    <!-- Theme Toggle Button -->
+    <div class="theme-toggle" id="themeToggle">
+        <i class="fas fa-moon" id="themeIcon"></i>
+    </div>
+    
+    <!-- Back to Top Button -->
+    <div class="back-to-top" id="backToTop">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+    
+    <!-- Stats Badge -->
+    <div class="stats-badge">
+        <div class="stat-item">
+            <i class="fas fa-server"></i>
+            <span>Servers: <span class="stat-value">170</span></span>
+        </div>
+        <div class="stat-item">
+            <i class="fas fa-users"></i>
+            <span>Users: <span class="stat-value">250</span></span>
+        </div>
+    </div>
+    
+    <!-- Top.gg Vote Widget -->
+    <div class="topgg-widget">
+        <a href="https://top.gg/bot/1131915476335870023" target="_blank">
+            <img src="https://top.gg/api/widget/1131915476335870023.svg" alt="Vote for Skirk Bot on top.gg">
+        </a>
+        <div class="topgg-widget-text">Vote for Skirk Bot!</div>
+    </div>
+    
+    <!-- Cosmic Background -->
+    <div class="cosmic-grid"></div>
+    <div class="particles" id="particles"></div>
+    
+    <!-- Starfield Background -->
+    <div class="stars" id="stars"></div>
+    
+    <!-- Navigation -->
+    <nav>
+        <div class="container nav-container">
+            <a href="#" class="logo">
+                <div class="logo-img"></div>
+                Skirk Bot
+            </a>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#how-it-works">How It Works</a></li>
+                <li><a href="#features">Features</a></li>
+                <li><a href="#reactions">Reactions</a></li>
+                <li><a href="#video">How to Play</a></li>
+                <li><a href="#premium-info">Premium</a></li>
+                <li><a href="#policy">Policy</a></li>
+            </ul>
+            <button class="menu-toggle" id="menuToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+    
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container hero-content">
+            <h1 class="glitch" data-text="Skirk Bot">Skirk Bot</h1>
+            <p>The ultimate Discord bot for Genshin Impact fans. Hunt monsters, collect characters, and build your dream team!</p>
+            <div class="btn-group">
+                <a href="https://discord.com/oauth2/authorize?client_id=1131915476335870023&permissions=2048&integration_type=0&scope=bot" class="btn" id="inviteBtn">
+                    <i class="fas fa-plus"></i> Invite Bot
+                </a>
+                <a href="https://discord.gg/ApE66m9FVu" class="btn btn-outline" id="joinBtn">
+                    <i class="fas fa-users"></i> Join Server
+                </a>
+                <a href="https://discord.gg/XcUufJ9JtA" class="btn btn-test" id="testBtn">
+                    <i class="fas fa-flask"></i> Test Server
+                </a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- How It Works Section -->
+    <section class="how-it-works" id="how-it-works">
+        <div class="container">
+            <h2 class="section-title">How Bot Works</h2>
+            
+            <div class="steps-container">
+                <div class="step-card">
+                    <div class="step-number">1</div>
+                    <div class="step-icon">
+                        <i class="fas fa-terminal"></i>
+                    </div>
+                    <h3 class="step-title">Command System</h3>
+                    <p class="step-desc">Skirk Bot responds to commands with either slash commands (/) or double dash prefix (--). Both work the same way, so use whichever you prefer!</p>
+                    <div class="command-example">/hunt or --hunt</div>
+                </div>
+                
+                <div class="step-card">
+                    <div class="step-number">2</div>
+                    <div class="step-icon">
+                        <i class="fas fa-cog"></i>
+                    </div>
+                    <h3 class="step-title">Custom Prefix</h3>
+                    <p class="step-desc">Server admins can change the command prefix to something custom using the /setprefix command. This allows for multiple bots with different prefixes in the same server.</p>
+                    <div class="command-example">/setprefix !</div>
+                </div>
+                
+                <div class="step-card">
+                    <div class="step-number">3</div>
+                    <div class="step-icon">
+                        <i class="fas fa-question-circle"></i>
+                    </div>
+                    <h3 class="step-title">Check Prefix</h3>
+                    <p class="step-desc">Forgot what prefix is being used in your server? Simply use the /prefix command to see the current active prefix for Skirk Bot.</p>
+                    <div class="command-example">/prefix</div>
+                </div>
+                
+                <div class="step-card">
+                    <div class="step-number">4</div>
+                    <div class="step-icon">
+                        <i class="fas fa-user-shield"></i>
+                    </div>
+                    <h3 class="step-title">Admin Controls</h3>
+                    <p class="step-desc">Server admins have additional control over the bot, including enabling/disabling it in specific channels and managing announcement settings.</p>
+                    <div class="command-example">/enable #channel</div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Features Section -->
+    <section class="features" id="features">
+        <div class="container">
+            <h2 class="section-title">Bot Features</h2>
+            
+            <div class="galactic-features">
+                <!-- Gameplay Feature Category -->
+                <div class="feature-category">
+                    <div class="category-header">
+                        <div class="category-icon gameplay-icon">
+                            <img src="https://i.postimg.cc/J7JqxMpB/Generated-Image-October-15-2025-1-55-AM-removebg-preview-cropped.png" alt="Gameplay" style="width: 100%; height: 100%; object-fit: contain;">
+                        </div>
+                        <h3 class="category-title">Gameplay</h3>
+                    </div>
+                    
+                    <div class="commands-grid">
+                        <div class="command-item">
+                            <div class="command-name">
+                                <i class="fas fa-user"></i> /apply
+                            </div>
+                            <div class="command-desc">Register as a hunter</div>
+                        </div>
+                        
+                        <div class="command-item">
+                            <div class="command-name">
+                                <i class="fas fa-dragon"></i> /hunt
+                            </div>
+                            <div class="command-desc">Fight monsters & collect loot</div>
+                        </div>
+                        
+                        <div class="command-item">
+                            <div class="command-name">
+                                <i class="fas fa-coins"></i> /sell
+                            </div>
+                            <div class="command-desc">Convert loot to Mora</div>
+                        </div>
+                        
+                        <div class="command-item">
+                            <div class="command-name">
+                                <i class="fas fa-id-card"></i> /profile
+                            </div>
+                            <div class="command-desc">View your stats & pity</div>
+                        </div>
+                        
+                        <div class="command-item">
+                            <div class="command-name">
+                                <i class="fas fa-vote-yea"></i> /vote
+                            </div>
+                            <div class="command-desc">Earn 6K Mora + Primos</div>
+                        </div>
+                        
+                        <div class="command-item">
+                            <div class="command-name">
+                                <i class="fas fa-calendar-day"></i> /daily
+                            </div>
+                            <div class="command-desc">Complete daily quests</div>
+                        </div>
+                        
+                        <div class="command-item">
+                            <div class="command-name">
+                                <i class="fas fa-backpack"></i> /inv
+                            </div>
+                            <div class="command-desc">View your inventory</div>
+                        </div>
+                        
+                        <div class="command-item">
+                            <div class="command-name">
+                                <i class="fas fa-shopping-cart"></i> /shop
+                            </div>
+                            <div class="command-desc">Trade Mora for Primogems</div>
+                        </div>
+                        
+                        <div class="command-item">
+                            <div class="command-name">
+                                <i class="fas fa-gift"></i> /wish
+                            </div>
+                            <div class="command-desc">Gacha: Pull characters/weapons</div>
+                        </div>
+                        
+                        <div class="command-item">
+                            <div class="command-name">
+                                <i class="fas fa-star"></i> /wish1
+                            </div>
+                            <div class="command-desc">Wuthering Waves banner</div>
+                        </div>
+                        
+                        <div class="command-item">
+                            <div class="command-name">
+                                <i class="fas fa-star"></i> /cloot
+                            </div>
+                            <div class="command-desc">View character pulls</div>
+                        </div>
+                        
+                        <div class="command-item">
+                            <div class="command-name">
+                                <i class="fas fa-sword"></i> /wloot
+                            </div>
+                            <div class="command-desc">View weapon pulls</div>
+                        </div>
+                        
+                        <div class="command-item">
+                            <div class="command-name">
+                                <i class="fas fa-users"></i> /addteam
+                            </div>
+                            <div class="command-desc">Add character to team</div>
+                        </div>
+                        
+                        <div class="command-item">
+                            <div class="command-name">
+                                <i class="fas fa-user-minus"></i> /removeteam
+                            </div>
+                            <div class="command-desc">Remove character from team</div>
+                        </div>
+                        
+                        <div class="command-item">
+                            <div class="command-name">
+                                <i class="fas fa-users-cog"></i> /team
+                            </div>
+                            <div class="command-desc">Manage your team</div>
+                        </div>
+                        
+                        <div class="command-item">
+                            <div class="command-name">
+                                <i class="fas fa-fist-raised"></i> /battle
+                            </div>
+                            <div class="command-desc">Fight weekly bosses</div>
+                        </div>
+                        
+                        <div class="command-item">
+                            <div class="command-name">
+                                <i class="fas fa-trophy"></i> /leaderboard
+                            </div>
+                            <div class="command-desc">View rankings</div>
+                        </div>
+                        
+                        <div class="command-item">
+                            <div class="command-name">
+                                <i class="fas fa-medal"></i> /blist
+                            </div>
+                            <div class="command-desc">Battle rankings</div>
+                        </div>
+                        
+                        <div class="command-item">
+                            <div class="command-name">
+                                <i class="fas fa-plus-circle"></i> /add_weapon
+                            </div>
+                            <div class="command-desc">Equip weapon to character</div>
+                        </div>
+                        
+                        <div class="command-item">
+                            <div class="command-name">
+                                <i class="fas fa-minus-circle"></i> /remove_weapon
+                            </div>
+                            <div class="command-desc">Unequip weapon</div>
+                        </div>
+                        
+                        <div class="command-item">
+                            <div class="command-name">
+                                <i class="fas fa-treasure-chest"></i> /open_chest
+                            </div>
+                            <div class="command-desc">Open chests</div>
+                        </div>
+                        
+                        <div class="command-item">
+                            <div class="command-name">
+                                <i class="fas fa-store"></i> /shop1
+                            </div>
+                            <div class="command-desc">View wallpaper shop</div>
+                        </div>
+                        
+                        <div class="command-item">
+                            <div class="command-name">
+                                <i class="fas fa-shopping-bag"></i> /buy [code]
+                            </div>
+                            <div class="command-desc">Buy wallpaper</div>
+                        </div>
+                        
+                        <div class="command-item">
+                            <div class="command-name">
+                                <i class="fas fa-images"></i> /mywalls
+                            </div>
+                            <div class="command-desc">View owned wallpapers</div>
+                        </div>
+                        
+                        <div class="command-item">
+                            <div class="command-name">
+                                <i class="fas fa-image"></i> /setwallpaper
+                            </div>
+                            <div class="command-desc">Equip wallpaper</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Shipping Feature Category -->
+                <div class="feature-category">
+                    <div class="category-header">
+                        <div class="category-icon shipping-icon">
+                            <img src="https://i.postimg.cc/Fs3BY0Mg/skirk-love-removebg-preview-cropped.png" alt="Shipping" style="width: 100%; height: 100%; object-fit: contain;">
+                        </div>
+                        <h3 class="category-title">Shipping</h3>
+                    </div>
+                    
+                    <div class="commands-grid">
+                        <div class="command-item">
+                            <div class="command-name">
+                                <i class="fas fa-random"></i> /ship
+                            </div>
+                            <div class="command-desc">Ship with random user</div>
+                        </div>
+                        
+                        <div class="command-item">
+                            <div class="command-name">
+                                <i class="fas fa-user-tag"></i> /ship @user
+                            </div>
+                            <div class="command-desc">Ship with specific user</div>
+                        </div>
+                        
+                        <div class="command-item">
+                            <div class="command-name">
+                                <i class="fas fa-dice"></i> /gship
+                            </div>
+                            <div class="command-desc">Random character ship</div>
+                        </div>
+                        
+                        <div class="command-item">
+                            <div class="command-name">
+                                <i class="fas fa-user-friends"></i> /gship [char]
+                            </div>
+                            <div class="command-desc">Specific character</div>
+                        </div>
+                        
+                        <div class="command-item">
+                            <div class="command-name">
+                                <i class="fas fa-heart-broken"></i> /gship name1 name2
+                            </div>
+                            <div class="command-desc">Custom name ship</div>
+                        </div>
+                        
+                        <div class="command-item">
+                            <div class="command-name">
+                                <i class="fas fa-list"></i> /listships
+                            </div>
+                            <div class="command-desc">All shippable characters</div>
+                        </div>
+                        
+                        <div class="command-item">
+                            <div class="command-name">
+                                <i class="fas fa-sync-alt"></i> /tship
+                            </div>
+                            <div class="command-desc">Genshin x Genshin ship</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- System Feature Category -->
+                <div class="feature-category">
+                    <div class="category-header">
+                        <div class="category-icon system-icon">
+                            <img src="https://i.postimg.cc/gcRDsmgZ/Generated-Image-October-15-2025-1-36-AM-removebg-preview-cropped.png" alt="Admin Settings" style="width: 100%; height: 100%; object-fit: contain;">
+                        </div>
+                        <h3 class="category-title">System (Admin Only)</h3>
+                    </div>
+                    
+                    <div class="commands-grid">
+                        <div class="command-item">
+                            <div class="command-name">
+                                <i class="fas fa-power-off"></i> /enable
+                            </div>
+                            <div class="command-desc">Enable bot in channel</div>
+                            <div class="command-tag">ADMIN</div>
+                        </div>
+                        
+                        <div class="command-item">
+                            <div class="command-name">
+                                <i class="fas fa-ban"></i> /disable
+                            </div>
+                            <div class="command-desc">Disable bot in channel</div>
+                            <div class="command-tag">ADMIN</div>
+                        </div>
+                        
+                        <div class="command-item">
+                            <div class="command-name">
+                                <i class="fas fa-list-ul"></i> /listchannel
+                            </div>
+                            <div class="command-desc">List disabled channels</div>
+                            <div class="command-tag">ADMIN</div>
+                        </div>
+                        
+                        <div class="command-item">
+                            <div class="command-name">
+                                <i class="fas fa-tag"></i> /prefix
+                            </div>
+                            <div class="command-desc">View current prefix</div>
+                            <div class="command-tag">ADMIN</div>
+                        </div>
+                        
+                        <div class="command-item">
+                            <div class="command-name">
+                                <i class="fas fa-edit"></i> /setprefix [symbol]
+                            </div>
+                            <div class="command-desc">Change prefix</div>
+                            <div class="command-tag">ADMIN</div>
+                        </div>
+                        
+                        <div class="command-item">
+                            <div class="command-name">
+                                <i class="fas fa-bullhorn"></i> /enableannouncing
+                            </div>
+                            <div class="command-desc">Enable alerts</div>
+                            <div class="command-tag">ADMIN</div>
+                        </div>
+                        
+                        <div class="command-item">
+                            <div class="command-name">
+                                <i class="fas fa-volume-mute"></i> /disableannouncing
+                            </div>
+                            <div class="command-desc">Disable alerts</div>
+                            <div class="command-tag">ADMIN</div>
+                        </div>
+                        
+                        <div class="command-item">
+                            <div class="command-name">
+                                <i class="fas fa-bell"></i> /setannounce
+                            </div>
+                            <div class="command-desc">Set alert channel</div>
+                            <div class="command-tag">ADMIN</div>
+                        </div>
+                        
+                        <div class="command-item">
+                            <div class="command-name">
+                                <i class="fas fa-window-maximize"></i> /embed
+                            </div>
+                            <div class="command-desc">Create custom embed</div>
+                            <div class="command-tag">ADMIN</div>
+                        </div>
+                        
+                        <div class="command-item">
+                            <div class="command-name">
+                                <i class="fas fa-edit"></i> /edit_embed
+                            </div>
+                            <div class="command-desc">Edit embed</div>
+                            <div class="command-tag">ADMIN</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Reactions Section -->
+    <section class="reactions" id="reactions">
+        <div class="container">
+            <h2 class="section-title">Fun Reactions</h2>
+            <p style="text-align: center; margin-bottom: 3rem; max-width: 800px; margin-left: auto; margin-right: auto; font-size: 1rem; color: var(--text-secondary);">
+                Spice up your Discord conversations with our collection of animated reaction GIFs! Simply use the commands below to trigger these fun animations.
+            </p>
+            
+            <div class="reactions-grid" id="reactionsGrid">
+                <!-- Reactions will be populated by JavaScript -->
+            </div>
+        </div>
+    </section>
+    
+    <!-- Video Section -->
+    <section class="video-section" id="video">
+        <div class="container">
+            <h2 class="section-title">How to Play</h2>
+            <div class="video-container">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/6jo4wrW7EQ4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            <div style="margin-top: 3rem; text-align: center;">
+                <h3 style="color: var(--text); margin-bottom: 1.5rem; font-size: 1.5rem;">Getting Started Guide</h3>
+                <ol style="text-align: left; max-width: 900px; margin: 0 auto; color: var(--text-secondary); line-height: 2; font-size: 1rem;">
+                    <li>Invite Skirk Bot to your Discord server using the button above</li>
+                    <li>Use <code style="background: var(--command-bg); padding: 6px 12px; border-radius: 10px; color: var(--neon-blue); font-weight: 700;">/apply</code> to register as a hunter</li>
+                    <li>Start hunting monsters with <code style="background: var(--command-bg); padding: 6px 12px; border-radius: 10px; color: var(--neon-blue); font-weight: 700;">/hunt</code> to collect loot</li>
+                    <li>Sell your loot for Mora using <code style="background: var(--command-bg); padding: 6px 12px; border-radius: 10px; color: var(--neon-blue); font-weight: 700;">/sell</code></li>
+                    <li>Use Mora to buy Primogems in the shop with <code style="background: var(--command-bg); padding: 6px 12px; border-radius: 10px; color: var(--neon-blue); font-weight: 700;">/shop</code></li>
+                    <li>Pull characters and weapons with <code style="background: var(--command-bg); padding: 6px 12px; border-radius: 10px; color: var(--neon-blue); font-weight: 700;">/wish</code></li>
+                    <li>Build your team and battle others with <code style="background: var(--command-bg); padding: 6px 12px; border-radius: 10px; color: var(--neon-blue); font-weight: 700;">/team</code> and <code style="background: var(--command-bg); padding: 6px 12px; border-radius: 10px; color: var(--neon-blue); font-weight: 700;">/battle</code></li>
+                </ol>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Premium Section -->
+    <section id="premium-info" class="fade-in">
+        <div class="container">
+            <h2 class="section-title"><i class="fas fa-crown"></i> Subscription Tiers & Donations</h2>
+            
+            <!-- Normal Tier -->
+            <div class="tier-card normal-tier">
+                <h3>
+                    <img src="https://i.postimg.cc/YSk7BGgN/32877-animated-arrow-bluelite.gif" style="height: 25px;">
+                    Normal Tier – $2/month
+                    <img src="https://i.postimg.cc/K8tbWrKv/5265-bluesaturn.gif" style="height: 25px;">
+                </h3>
+                <ul>
+                    <li>
+                        <img src="https://i.postimg.cc/xCCW9Kdm/Genesis-Crystal.png" style="height: 25px;">
+                        6,000 Genesis Crystals/day
+                    </li>
+                    <li>
+                        <img src="https://i.postimg.cc/xCCW9Kdm/Genesis-Crystal.png" style="height: 25px;">
+                        20,000 Bonus Genesis (once)
+                    </li>
+                    <li>
+                        <img src="https://i.postimg.cc/xCCW9Kdm/Genesis-Crystal.png" style="height: 25px;">
+                        Total Monthly Genesis: 200,000
+                    </li>
+                    <li>🎁 1 Free character or weapon/month 5 stars</li>
+                    <li>🛒 Can buy 1 character or weapon/month 10 stars</li>
+                    <li>➥ Total: 2 characters or weapons / month</li>
+                    <li>
+                        <img src="https://i.postimg.cc/YSk7BGgN/32877-animated-arrow-bluelite.gif" style="height: 20px;">
+                        Hunting bonus: +3% Mora, +1 base loot, 25% chance for extra rolls
+                    </li>
+                </ul>
+            </div>
+            
+            <!-- Plus Tier -->
+            <div class="tier-card plus-tier">
+                <h3>
+                    <img src="https://i.postimg.cc/YSk7BGgN/32877-animated-arrow-bluelite.gif" style="height: 25px;">
+                    Plus Tier – $5/month
+                    <img src="https://i.postimg.cc/K8tbWrKv/5265-bluesaturn.gif" style="height: 25px;">
+                </h3>
+                <ul>
+                    <li>
+                        <img src="https://i.postimg.cc/xCCW9Kdm/Genesis-Crystal.png" style="height: 25px;">
+                        10,000 Genesis Crystals/day
+                    </li>
+                    <li>
+                        <img src="https://i.postimg.cc/xCCW9Kdm/Genesis-Crystal.png" style="height: 25px;">
+                        5,000 Bonus Genesis/day
+                    </li>
+                    <li>
+                        <img src="https://i.postimg.cc/xCCW9Kdm/Genesis-Crystal.png" style="height: 25px;">
+                        Total Monthly Genesis: ~450,000
+                    </li>
+                    <li>🎁 2 Free character or weapon/month 5 stars</li>
+                    <li>🛒 Can buy 2 items/month 10 stars</li>
+                    <li>➥ Total: 3 items/month</li>
+                    <li>
+                        <img src="https://i.postimg.cc/YSk7BGgN/32877-animated-arrow-bluelite.gif" style="height: 20px;">
+                        Hunting bonus: +7% Mora, +2-3 base loot, 50% chance for extra rolls
+                    </li>
+                </ul>
+            </div>
+            
+            <!-- Premium Tier -->
+            <div class="tier-card premium-tier">
+                <div class="premium-badge">MOST POPULAR</div>
+                <h3>
+                    <img src="https://i.postimg.cc/YSk7BGgN/32877-animated-arrow-bluelite.gif" style="height: 25px;">
+                    Premium Tier – $9/month
+                    <img src="https://i.postimg.cc/K8tbWrKv/5265-bluesaturn.gif" style="height: 25px;">
+                </h3>
+                <ul>
+                    <li>
+                        <img src="https://i.postimg.cc/xCCW9Kdm/Genesis-Crystal.png" style="height: 25px;">
+                        20,000 Genesis Crystals/day
+                    </li>
+                    <li>
+                        <img src="https://i.postimg.cc/xCCW9Kdm/Genesis-Crystal.png" style="height: 25px;">
+                        10,000 Bonus Genesis/day
+                    </li>
+                    <li>
+                        <img src="https://i.postimg.cc/xCCW9Kdm/Genesis-Crystal.png" style="height: 25px;">
+                        Total Monthly Genesis: 900,000
+                    </li>
+                    <li>🎁 2 Free Free character or weapon/month 5 stars </li>
+                    <li>🛒 Can buy 4 characters/month 10 stars </li>
+                    <li>➥ Total: up to 6 characters or weapons / month</li>
+                    <li>
+                        <img src="https://i.postimg.cc/YSk7BGgN/32877-animated-arrow-bluelite.gif" style="height: 20px;">
+                        Hunting bonus: +10% Mora, 10-15 base loot, guaranteed 2-4 extra rolls
+                    </li>
+                </ul>
+            </div>
+            
+            <!-- Donation Tiers -->
+            <h3 style="margin-top: 3rem; text-align: center; color: var(--text); font-size: 2rem;">One-Time Donations</h3>
+            <div class="donation-grid">
+                <div class="donation-tier">
+                    <h4>$1</h4>
+                    <p>7,500 Genesis Crystals</p>
+                </div>
+                <div class="donation-tier">
+                    <h4>$5</h4>
+                    <p>50,000 Genesis Crystals</p>
+                </div>
+                <div class="donation-tier">
+                    <h4>$10</h4>
+                    <p>110,000 Genesis Crystals</p>
+                </div>
+                <div class="donation-tier">
+                    <h4>$20</h4>
+                    <p>230,000 Genesis Crystals</p>
+                </div>
+                <div class="donation-tier">
+                    <h4>$30</h4>
+                    <p>360,000 Genesis Crystals</p>
+                </div>
+                <div class="donation-tier">
+                    <h4>$40</h4>
+                    <p>500,000 Genesis Crystals</p>
+                </div>
+                <div class="donation-tier">
+                    <h4>$50</h4>
+                    <p>650,000 Genesis Crystals</p>
+                </div>
+            </div>
+            
+            <p style="margin-top: 2rem; font-size: 1rem; color: var(--text-secondary); text-align: center;">Prices are monthly for subscriptions. One-time donations give immediate Genesis Crystals.</p>
+            <p style="margin-top: 0.5rem; font-size: 1rem; color: var(--text-secondary); text-align: center;">Last Updated: July 2025</p>
+            
+            <!-- Purchase Button -->
+            <div class="purchase-section">
+                <a href="https://discord.gg/ApE66m9FVu" class="purchase-btn" id="purchaseBtn">
+                    <i class="fas fa-ticket-alt"></i> Purchase via Support Ticket
+                </a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Policy Section -->
+    <section id="policy" class="fade-in">
+        <div class="container">
+            <h2 class="section-title"><i class="fas fa-shield-alt"></i> Privacy & Data Policy</h2>
+            <div class="policy-content">
+                <p><strong>Skirk Bot</strong> is designed with your privacy and data safety in mind. We only collect the bare minimum required to provide an immersive and enjoyable experience. We do not track personal activity, and your data is never sold or shared.</p>
+                <hr style="border: 0; border-top: 3px solid rgba(124, 58, 237, 0.4); margin: 2.5rem 0;">
+                <h3 class="positive">✅ What We Collect</h3>
+                <ul>
+                    <li>Your Discord user ID</li>
+                    <li>Game-related data (wishes, team setup, inventory, levels)</li>
+                    <li>Command usage (e.g. `--hunt`, `/profile`, `/pvp`)</li>
+                </ul>
+                <h3 class="negative">❌ What We Don't Collect</h3>
+                <ul>
+                    <li>Message logs or chat history</li>
+                    <li>Presence data logs (no online/offline storage)</li>
+                    <li>Personal identifiable info (email, IP, etc.)</li>
+                    <li>Anything unrelated to gameplay</li>
+                </ul>
+                <h3 class="neutral">🔐 How We Use Your Data</h3>
+                <ul>
+                    <li>To enable core features like profiles, gacha pulls, and leaderboards</li>
+                    <li>To personalize your experience (team builds, wallpaper settings)</li>
+                    <li>To improve game balance and engagement over time</li>
+                </ul>
+                <h3 class="neutral">🔄 Data Retention & Security</h3>
+                <ul>
+                    <li>Your data is stored securely on encrypted servers</li>
+                    <li>Game data is retained for 365 days of inactivity</li>
+                    <li>You can request data deletion at any time through our support server</li>
+                    <li>We implement industry-standard security measures to protect your information</li>
+                </ul>
+                <h3 class="neutral">🔄 Opt-Out & Removal</h3>
+                <p>If you want your data deleted, just contact us through our support server. You can also disable presence-based features by going invisible or not using commands that rely on online status.</p>
+                <p style="margin-top: 3rem; font-size: 1rem; color: var(--text-secondary);">Last Updated: July 2025</p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p style="font-size: 1.2rem; margin-bottom: 1.5rem;">Skirk Bot &copy; 2025 • Made with <i class="fas fa-heart" style="color: var(--accent);"></i> by Galaxy Hunter</p>
+            <div class="footer-links">
+                <a href="#home"><i class="fas fa-home"></i> Home</a>
+                <a href="https://discord.gg/ApE66m9FVu"><i class="fas fa-life-ring"></i> Support</a>
+                <a href="#"><i class="fas fa-book"></i> Documentation</a>
+                <a href="https://galaxy-hunter-neon.vercel.app/" target="_blank"><i class="fas fa-user-astronaut"></i> Creator</a>
+            </div>
+            <div class="social-links">
+                <a href="https://discord.gg/XcUufJ9JtA" target="_blank"><i class="fab fa-discord"></i></a>
+                <a href="https://open.spotify.com/user/3175tlxvpow2m6y7hgmfbixgr4e4?si=a7601c492d984e4a" target="_blank"><i class="fab fa-spotify"></i></a>
+                <a href="https://www.instagram.com/galaxyhunter999/" target="_blank"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        // Reaction GIFs data
+        const MENTION_REACTIONS = {
+            "hug": ["https://i.postimg.cc/q7mvk6V0/a-rank-party-a-rank.gif", "https://i.postimg.cc/RFyCtrZD/anime-hug-anime-cry.gif", "https://i.postimg.cc/7YgP5W8K/anime-squeezing-hug-eris-squeeze-hug.gif", "https://i.postimg.cc/bvYvcH53/cute.gif", "https://i.postimg.cc/C1zLdMS8/happy-smile.gif", "https://i.postimg.cc/BQWQQGy8/hibike-euphonium.gif", "https://i.postimg.cc/QdmXbKM5/hug-comfortable.gif", "https://i.postimg.cc/d3CsmW7t/shiideraii.gif", "https://i.postimg.cc/qB6vT7mV/yukon-child-form-embracing-ulquiorra.gif", "https://i.postimg.cc/XYsbFM2k/natsu-natsu-dragneel.gif", "https://i.postimg.cc/qMd4Hxhy/kitsune-upload-anime.gif", "https://i.postimg.cc/Mp6wvZYG/haikyuu-anime.gif","https://i.postimg.cc/02dxkKD3/foxplushy-foxy.gif"],
+            "kiss": [
+                "https://i.postimg.cc/pT84s3B7/anime-kiss.gif",
+                "https://i.postimg.cc/qMLVVVdH/hyakkano-100-girlfriends.gif",
+                "https://i.postimg.cc/4xxCXLJ7/ichigo-hiro.gif",
+                "https://i.postimg.cc/g2SCjVJM/miyamura-hori.gif",
+                "https://i.postimg.cc/yYB4b6tT/sealyx-frieren-beyond-journey-s-end.gif",
+                "https://i.postimg.cc/9fsstcyZ/kiss.gif",
+                "https://i.postimg.cc/wxDY2Rfv/kiss-1.gif",
+                "https://i.postimg.cc/XvrTCrBn/kiss-gentle-kiss.gif"
+            ],
+            "slap": [
+                "https://i.postimg.cc/Bn6zrjg2/azumanga-azumanga-daioh.gif",
+                "https://i.postimg.cc/wvh4XLqY/chainsaw-man-csm.gif",
+                "https://i.postimg.cc/MTkrfd8Y/girl-slap.gif",
+                "https://i.postimg.cc/RZDY4vsy/slap.gif",
+                "https://i.postimg.cc/bYx4kcrS/slap-chie.gif",
+                "https://i.postimg.cc/bvSBv44J/slap-jjk.gif",
+                "https://i.postimg.cc/28TJ9Q4z/taiga-toradora.gif",
+                "https://i.postimg.cc/9FcKB8w8/uma-musume.gif"
+            ],
+            "pat": [
+                "https://i.postimg.cc/zB5F1Mr4/angel-beats-tachibana-kanade.gif",
+                "https://i.postimg.cc/J4hKn9kL/anime-head-pat-anime-pat.gif",
+                "https://i.postimg.cc/Jnqc7q70/anime-pat-anime.gif",
+                "https://i.postimg.cc/43pQqGrz/danjo-no-yuujou-wa-seiritsu-suru-can-a-boy-girl-friendship-survive.gif",
+                "https://i.postimg.cc/T3L9jg0N/konohana-kitan-yuzu.gif",
+                "https://i.postimg.cc/sxgPMh1c/mai-sakurajima.gif",
+                "https://i.postimg.cc/x8pvM1zS/tsumiki-anime.gif",
+                "https://i.postimg.cc/3Jb1DnXD/spy-x-family-anya.gif",
+                "https://i.postimg.cc/sfmw3V1m/shiideraii-1.gif",
+                "https://i.postimg.cc/ncMYZByV/rudeus-rudeus-greyrat.gif",
+                "https://i.postimg.cc/J7pc9Pdd/qualidea-code-head-pat.gif",
+                "https://i.postimg.cc/RZkTghbS/pat.gif"
+            ],
+            "poke": [
+                "https://i.postimg.cc/br4GqDnd/anime-sleep.gif",
+                "https://i.postimg.cc/DwLGygBh/boop-anime.gif",
+                "https://i.postimg.cc/tCVZ2k06/boop-poke.gif",
+                "https://i.postimg.cc/fLTSChZW/highschool-dxd-anime.gif",
+                "https://i.postimg.cc/R0TnwZkb/nekone-utawarerumono.gif",
+                "https://i.postimg.cc/zX9WrMwp/poke-anime.gif"
+            ],
+            "bite": [
+                "https://i.postimg.cc/13rprB6H/anime-acchi-kocchi.gif",
+                "https://i.postimg.cc/Qtw5dyGX/anime-bite.gif",
+                "https://i.postimg.cc/1zWwLzvV/anime-bite-1.gif",
+                "https://i.postimg.cc/pdVKGjJt/anime-bite-2.gif",
+                "https://i.postimg.cc/TwpgGXs7/anime-bite-3.gif",
+                "https://i.postimg.cc/3JpjdYxz/anime-bite-4.gif",
+                "https://i.postimg.cc/nhJ4mgsr/anime-bite-5.gif",
+                "https://i.postimg.cc/cC33gB0f/vnc-vanitas.gif"
+            ],
+            "lick": [
+                "https://i.postimg.cc/4d48XpHv/big-dog-anime.gif",
+                "https://i.postimg.cc/G2MXt9vW/anime-lick.gif",
+                "https://i.postimg.cc/YSHny5ps/anime-lick-face.gif",
+                "https://i.postimg.cc/kM1HXYc2/saikin-yatotta-maid-ga-ayashii-anime-lick.gif",
+                "https://i.postimg.cc/zfCMzJtN/shura-hiwa-lamer.gif",
+                "https://i.postimg.cc/bv9CXmrN/talentless-nana-anime-lick.gif",
+                "https://i.postimg.cc/zvV0g5jV/urushi-yaotome-cat.gif"
+            ],
+            "highfive": [
+                "https://i.postimg.cc/vBSvMksM/anime-high-five.gif",
+                "https://i.postimg.cc/W1PCQF88/ban-meliodas.gif",
+                "https://i.postimg.cc/JhMxQjxw/high-five.gif",
+                "https://i.postimg.cc/CxjJDcjH/high-five-anime.gif",
+                "https://i.postimg.cc/8c2Bfvc0/high-five-high5.gif",
+                "https://i.postimg.cc/yxgyNj1R/high-touch-satoshi.gif",
+                "https://i.postimg.cc/bJvR7843/hunter-x-hunter-high-five.gif",
+                "https://i.postimg.cc/d06BNDNh/jujutsu-kaisen-itadori-and-gojo.gif"
+            ],
+            "stare": [
+                "https://i.postimg.cc/SRYGmDsY/anime-frieren.gif",
+                "https://i.postimg.cc/nVNyBWq5/geto.gif",
+                "https://i.postimg.cc/y8H2rSQy/kaede-azusagawa-rascal-does-not-dream-of-bunny-girl-senpai.gif",
+                "https://i.postimg.cc/4x6BKL1z/lu-guang-link-click.gif",
+                "https://i.postimg.cc/76dW1CJ7/nahida-nahida-genshin.gif",
+                "https://i.postimg.cc/wBF221ZM/rin-anime.gif",
+                "https://i.postimg.cc/RZL2rV25/sololeveling-anime.gif",
+                "https://i.postimg.cc/xqr38MJx/venti-genshin-impact-venti.gif"
+            ],
+            "tickle": [
+                "https://i.postimg.cc/br09Gdxq/anime-tickle.gif",
+                "https://i.postimg.cc/CKd7vhg4/cat-love.gif",
+                "https://i.postimg.cc/3xfC0sv0/date-a-live-date-a-live-iv.gif",
+                "https://i.postimg.cc/VkkW6fdc/gif-anime-armpit.gif",
+                "https://i.postimg.cc/DygcnJfg/girl-neko.gif",
+                "https://i.postimg.cc/Zqgc2GYz/laugh-droll.gif",
+                "https://i.postimg.cc/rwVQrGZ3/miria-akagi-akagi-miria.gif",
+                "https://i.postimg.cc/52spqHZ0/natsu-erza.gif",
+                "https://i.postimg.cc/QNcbYYRv/nezuko-mitsuri.gif",
+                "https://i.postimg.cc/SsCW5jtc/onimai-momiji-hozuki.gif",
+                "https://i.postimg.cc/fWd2nR02/poke-anime-1.gif",
+                "https://i.postimg.cc/VLBKvZgX/saikin-yatotta-maid-ga-ayashii-anime-tickle.gif",
+                "https://i.postimg.cc/5tH5BsB7/tickle-laugh.gif",
+                "https://i.postimg.cc/fyQvTY0H/vanilla-nekopara.gif"
+            ],
+            "kick": [
+                "https://i.postimg.cc/vTPDSsMW/anime-love-after-world-domination.gif",
+                "https://i.postimg.cc/HLGnN3GP/anime-ouch.gif",
+                "https://i.postimg.cc/xC3XMm4p/arlecchino-genshinimpact.gif",
+                "https://i.postimg.cc/Z5v0j2Qd/bleach-anime.gif",
+                "https://i.postimg.cc/pXTm5pYk/genshin-genshin-impact.gif",
+                "https://i.postimg.cc/zDpLfnWV/gifdapumpkin-pumpkinama-danganronpa.gif",
+                "https://i.postimg.cc/LX2X9X8t/gintama-anime.gif",
+                "https://i.postimg.cc/rFPK1MfT/mad-angry.gif",
+                "https://i.postimg.cc/Wzphn3RN/ranma-ryoga.gif",
+                "https://i.postimg.cc/GpY83VJC/roshidere-anime.gif",
+                "https://i.postimg.cc/8PKrZhPq/scaramouche-wanderer.gif",
+                "https://i.postimg.cc/L661kyRt/signora-kicking-venti.gif",
+                "https://i.postimg.cc/wTZjtFBT/spy-x-family-loid-forger.gif",
+                "https://i.postimg.cc/t48njp6k/xilonen-angry-xilonen.gif"
+            ],
+            "feed": [
+                "https://i.postimg.cc/RFDjPsyW/aharen-san-aharen-san-anime.gif",
+                "https://i.postimg.cc/KvMyWbZx/anime-acchi-kocchi-1.gif",
+                "https://i.postimg.cc/J09Ch65f/anime-alya.gif",
+                "https://i.postimg.cc/7LmvzYNM/kawaii-wholesome.gif",
+                "https://i.postimg.cc/9QPHWBRk/kubo-nagisa-anime.gif",
+                "https://i.postimg.cc/NGVcbFvd/lycoris-recoil-anime-feed.gif",
+                "https://i.postimg.cc/W42LtJ01/nyanko-days-hd-gif.gif"
+            ],
+            "kill": [
+                "https://i.postimg.cc/j5BRWSs3/akame-akame-ga-kill.gif",
+                "https://i.postimg.cc/261z8ZfB/anime.gif",
+                "https://i.postimg.cc/fbTzpP2C/anime-manga.gif",
+                "https://i.postimg.cc/zGkDdNj3/assassin-smile.gif",
+                "https://i.postimg.cc/sxSs5Cxj/falling-from-window-anime-death.gif",
+                "https://i.postimg.cc/tgSqjz8j/hxh-killua.gif",
+                "https://i.postimg.cc/T3xYq1nZ/kuma-kuma-kuma-bear-fina.gif",
+                "https://i.postimg.cc/NGW0FpFG/nui-harime-harime-nui.gif"
+            ],
+            "tease": [
+                "https://i.postimg.cc/3wCGCzyZ/anime-bleh.gif",
+                "https://i.postimg.cc/5NYFkXYy/anime-girl.gif",
+                "https://i.postimg.cc/DZvXC5L3/anime-girl-anime.gif",
+                "https://i.postimg.cc/TYprMkSR/anime-kawaii.gif",
+                "https://i.postimg.cc/SN3cy6Fc/girl-silly.gif",
+                "https://i.postimg.cc/L8jg2GVM/girls-anime.gif",
+                "https://i.postimg.cc/jjKw5v8n/konosuba-aqua.gif",
+                "https://i.postimg.cc/wjNL31gZ/lime-saber-marionette.gif",
+                "https://i.postimg.cc/nz3QN7Gj/scaramouche-the-wanderer.gif",
+                "https://i.postimg.cc/mrGM9TrD/tongue-tongue-out.gif"
+            ],
+        };
+
+        const SINGLE_REACTIONS = {
+            "blush": [
+                "https://i.postimg.cc/HLpwKp1N/anime-arrouser.gif",
+                "https://i.postimg.cc/2yBhvyn1/anime-blush.gif",
+                "https://i.postimg.cc/P5bb2C9Z/anime-blushing.gif",
+                "https://i.postimg.cc/nzrvF0zY/blushing-anime.gif",
+                "https://i.postimg.cc/tgT5JXvx/marin-marin-kitagawa.gif",
+                "https://i.postimg.cc/jjd8f62C/idk.gif",
+                "https://i.postimg.cc/pXfk1cnp/real.gif",
+                "https://i.postimg.cc/W1VYNcPG/when-supernatural-battles-became-commonplace-embarrassed.gif",
+                "https://i.postimg.cc/PrjQZbFh/sumi-sakurasawa-rent-a-girlfriend-1.gif"
+            ],
+            "sad": [
+                "https://i.postimg.cc/W3qwm5vp/anime-kanna.gif",
+                "https://i.postimg.cc/v89vc2h3/anime-look-away.gif",
+                "https://i.postimg.cc/8C0brqxn/anime-sad.gif",
+                "https://i.postimg.cc/XqMcs9jf/bocchi-the.gif",
+                "https://i.postimg.cc/YSh6kdjN/crying-girl-anime.gif",
+                "https://i.postimg.cc/4x86rD4N/sad-anime-guy-lonely-anime-guy.gif",
+                "https://i.postimg.cc/7YnMNCpz/pokemon-pikachu.gif",
+                "https://i.postimg.cc/cCQ726CV/sad-anime.gif"
+            ],
+            "stress": [
+                "https://i.postimg.cc/T2ScwMny/adalfarus-okbb.gif",
+                "https://i.postimg.cc/sg3KFPpK/anime-girl-panic-attack.gif",
+                "https://i.postimg.cc/JnFjGZHw/chika.gif",
+                "https://i.postimg.cc/8P6mfKbZ/idol-precure-precure.gif",
+                "https://i.postimg.cc/RZGdv3dm/jujutsu-kaisen-choso.gif",
+                "https://i.postimg.cc/fy67gmM7/shock-anime.gif"
+            ],
+            "wave": [
+                "https://i.postimg.cc/Y2DVksX0/aino-aino-genshin-1.gif",
+                "https://i.postimg.cc/xdPxZxJ0/anime-bye-bye-maki.gif",
+                "https://i.postimg.cc/CKCXgMtp/bye-anime.gif",
+                "https://i.postimg.cc/SKWFxfn5/charlotte-charlotte-genshin.gif",
+                "https://i.postimg.cc/gcM9jJ0Y/kazuha-genshin-impact-kazuha-hi.gif",
+                "https://i.postimg.cc/HxsZ1wXb/laid-back-camp-nadeshiko.gif",
+                "https://i.postimg.cc/6QKbYJQj/owari-no-seraph-seraph-of-the-end.gif",
+                "https://i.postimg.cc/tTXfCQQZ/pjsk-pjsk-anime.gif",
+                "https://i.postimg.cc/sX6njM4q/sumi-sakurasawa-rent-a-girlfriend.gif",
+                "https://i.postimg.cc/KzxXk3LY/yae-miko-smile-yae-miko.gif",
+                "https://i.postimg.cc/rp62TPwx/yoimiya-genshin-impact.gif",
+                "https://i.postimg.cc/Nfyn0kV4/yun-jin.gif"
+            ],
+            "happy": [
+                "https://i.postimg.cc/Vks9Zf8V/anime-anime-girl.gif",
+                "https://i.postimg.cc/52kzP8pX/beast-tamer-kanade.gif",
+                "https://i.postimg.cc/DZG14mr8/excited-anime.gif",
+                "https://i.postimg.cc/Bvkxv21r/how-i-attended-an-all-guys-mixer-anime.gif",
+                "https://i.postimg.cc/cCNwRZhT/kusuriya-no-hitorigoto-apothecary.gif",
+                "https://i.postimg.cc/m2B7hLtg/yay-yeah.gif"
+            ],
+            "laugh": [
+                "https://i.postimg.cc/63Z16WTh/evil-laugh-greatest-alchemist.gif",
+                "https://i.postimg.cc/j2r3Lp7Y/hakase-shinonome-nichijou.gif",
+                "https://i.postimg.cc/VvBGMKqr/laugh-giggle.gif",
+                "https://i.postimg.cc/d1zPnNZ5/makeine-losing-heroine.gif",
+                "https://i.postimg.cc/9fKnjRXM/momo-ayase-ayase-momo.gif",
+                "https://i.postimg.cc/6QbN4pWJ/my-dress-up-darling-anime-laugh.gif",
+                "https://i.postimg.cc/wxhbSjCq/sylent-zenyte.gif"
+            ],
+            "mad": [
+                "https://i.postimg.cc/dtVm4QvS/anime-angry-slow-loop.gif",
+                "https://i.postimg.cc/G3QxFT0y/annoyed-anime-girl-annoyed.gif",
+                "https://i.postimg.cc/52H5WPXB/demon-slayer-kimetsu-no-yaiba.gif",
+                "https://i.postimg.cc/DZh1snB6/dont-toy-with-me-miss-nagatoro-hayase-nagatoro.gif",
+                "https://i.postimg.cc/85bMm9YS/dandadan-momo-ayase.gif"
+            ],
+            "absolute": [
+                "https://i.postimg.cc/m2mH8n6h/absolute-cinema.gif",
+                "https://i.postimg.cc/qvgCYG9S/absolute-cinema-arcane.gif",
+                "https://i.postimg.cc/FHf7GHLx/absolute-cinema-kpop-demon-hunters.gif",
+                "https://i.postimg.cc/6qjpLk6Y/cinema.gif",
+                "https://i.postimg.cc/d3HVmbQb/momo-ayase-dandadan.gif",
+                "https://i.postimg.cc/nrcLmFx6/nokotan-absolute-cinema.gif",
+                "https://i.postimg.cc/nrcLmFxw/skirk-genshin.gif",
+                "https://i.postimg.cc/Hxmnp0PZ/zero-two-darling-in-the-franxx.gif"
+            ]
+        };
+
+        // Check for saved theme preference or default to dark mode
+        const currentTheme = localStorage.getItem('theme') || 'dark';
+        if (currentTheme === 'light') {
+            document.body.classList.add('light-mode');
+            document.getElementById('themeIcon').classList.remove('fa-moon');
+            document.getElementById('themeIcon').classList.add('fa-sun');
+        }
+        
+        // Hide loading screen when page is fully loaded
+        window.addEventListener('load', function() {
+            setTimeout(function() {
+                document.getElementById('loadingScreen').classList.add('hidden');
+            }, 2000);
+        });
+        
+        // Theme Toggle
+        const themeToggle = document.getElementById('themeToggle');
+        const themeIcon = document.getElementById('themeIcon');
+        
+        themeToggle.addEventListener('click', () => {
+            document.body.classList.toggle('light-mode');
+            
+            if (document.body.classList.contains('light-mode')) {
+                themeIcon.classList.remove('fa-moon');
+                themeIcon.classList.add('fa-sun');
+                localStorage.setItem('theme', 'light');
+            } else {
+                themeIcon.classList.remove('fa-sun');
+                themeIcon.classList.add('fa-moon');
+                localStorage.setItem('theme', 'dark');
+            }
+            
+            // Create particle explosion on theme toggle
+            createParticleExplosion(themeToggle.offsetLeft + 35, themeToggle.offsetTop + 35);
+        });
+        
+        // Back to Top Button
+        const backToTopButton = document.getElementById('backToTop');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.add('visible');
+            } else {
+                backToTopButton.classList.remove('visible');
+            }
+        });
+        
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+            
+            // Create particle explosion on back to top
+            createParticleExplosion(backToTopButton.offsetLeft + 35, backToTopButton.offsetTop + 35);
+        });
+        
+        // Generate stars
+        const starsContainer = document.getElementById('stars');
+        const numberOfStars = 80;
+        
+        for (let i = 0; i < numberOfStars; i++) {
+            const star = document.createElement('div');
+            star.classList.add('star');
+            
+            // Random position
+            const left = Math.random() * 100;
+            const top = Math.random() * 100;
+            
+            // Random size
+            const size = Math.random() * 4 + 1;
+            
+            // Random animation delay
+            const delay = Math.random() * 5;
+            
+            star.style.left = `${left}%`;
+            star.style.top = `${top}%`;
+            star.style.width = `${size}px`;
+            star.style.height = `${size}px`;
+            star.style.animationDelay = `${delay}s`;
+            
+            starsContainer.appendChild(star);
+        }
+        
+        // Generate shooting stars
+        function createShootingStar() {
+            const shootingStar = document.createElement('div');
+            shootingStar.classList.add('shooting-star');
+            
+            // Random position
+            const left = Math.random() * 100;
+            const top = Math.random() * 50;
+            
+            shootingStar.style.left = `${left}%`;
+            shootingStar.style.top = `${top}%`;
+            
+            document.body.appendChild(shootingStar);
+            
+            // Remove shooting star after animation completes
+            setTimeout(() => {
+                shootingStar.remove();
+            }, 5000);
+        }
+        
+        // Create shooting stars periodically
+        setInterval(createShootingStar, 10000);
+        
+        // Generate floating particles
+        const particlesContainer = document.getElementById('particles');
+        const numberOfParticles = 25;
+        
+        for (let i = 0; i < numberOfParticles; i++) {
+            const particle = document.createElement('div');
+            particle.classList.add('particle-bg');
+            
+            // Random position
+            const left = Math.random() * 100;
+            
+            // Random size
+            const size = Math.random() * 4 + 1;
+            
+            // Random animation delay and duration
+            const delay = Math.random() * 30;
+            const duration = Math.random() * 25 + 25;
+            
+            particle.style.left = `${left}%`;
+            particle.style.width = `${size}px`;
+            particle.style.height = `${size}px`;
+            particle.style.animationDelay = `${delay}s`;
+            particle.style.animationDuration = `${duration}s`;
+            
+            particlesContainer.appendChild(particle);
+        }
+        
+        // Mobile Menu Toggle
+        const menuToggle = document.getElementById('menuToggle');
+        const navLinks = document.querySelector('.nav-links');
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            
+            // Create particle explosion on menu toggle
+            createParticleExplosion(menuToggle.offsetLeft + 17, menuToggle.offsetLeft + 17);
+        });
+        
+        // Close menu when clicking on a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+            });
+        });
+        
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    const offset = 90; // Account for fixed nav
+                    const targetPosition = target.offsetTop - offset;
+                    
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Fade in animation on scroll
+        const faders = document.querySelectorAll('.fade-in');
+        const appearOptions = {
+            threshold: 0.1,
+            rootMargin: "0px 0px -100px 0px"
+        };
+        
+        const appearOnScroll = new IntersectionObserver(function(entries, appearOnScroll) {
+            entries.forEach(entry => {
+                if (!entry.isIntersecting) {
+                    return;
+                } else {
+                    entry.target.classList.add('visible');
+                    appearOnScroll.unobserve(entry.target);
+                }
+            });
+        }, appearOptions);
+        
+        faders.forEach(fader => {
+            appearOnScroll.observe(fader);
+        });
+        
+        // Populate Reactions Section
+        function populateReactions() {
+            const reactionsGrid = document.getElementById('reactionsGrid');
+            
+            // Add mention reactions
+            for (const [reaction, gifs] of Object.entries(MENTION_REACTIONS)) {
+                const randomGif = gifs[Math.floor(Math.random() * gifs.length)];
+                
+                const reactionCard = document.createElement('div');
+                reactionCard.className = 'reaction-card';
+                reactionCard.innerHTML = `
+                    <img src="${randomGif}" alt="${reaction} reaction" class="reaction-gif" loading="lazy">
+                    <div class="reaction-info">
+                        <h4 class="reaction-name">${reaction.charAt(0).toUpperCase() + reaction.slice(1)}</h4>
+                        <p class="reaction-command">--${reaction} @user</p>
+                    </div>
+                `;
+                
+                reactionsGrid.appendChild(reactionCard);
+            }
+            
+            // Add single reactions
+            for (const [reaction, gifs] of Object.entries(SINGLE_REACTIONS)) {
+                const randomGif = gifs[Math.floor(Math.random() * gifs.length)];
+                
+                const reactionCard = document.createElement('div');
+                reactionCard.className = 'reaction-card';
+                reactionCard.innerHTML = `
+                    <img src="${randomGif}" alt="${reaction} reaction" class="reaction-gif" loading="lazy">
+                    <div class="reaction-info">
+                        <h4 class="reaction-name">${reaction.charAt(0).toUpperCase() + reaction.slice(1)}</h4>
+                        <p class="reaction-command">--${reaction}</p>
+                    </div>
+                `;
+                
+                reactionsGrid.appendChild(reactionCard);
+            }
+        }
+        
+        // Initialize reactions section
+        populateReactions();
+        
+        // Ultra-Enhanced Button Effects
+        function createRipple(event, button) {
+            const buttonRect = button.getBoundingClientRect();
+            const size = Math.max(buttonRect.width, buttonRect.height);
+            const x = event.clientX - buttonRect.left - size / 2;
+            const y = event.clientY - buttonRect.top - size / 2;
+            
+            const ripple = document.createElement('span');
+            ripple.classList.add('ripple');
+            ripple.style.width = ripple.style.height = size + 'px';
+            ripple.style.left = x + 'px';
+            ripple.style.top = y + 'px';
+            
+            button.appendChild(ripple);
+            
+            setTimeout(() => {
+                ripple.remove();
+            }, 1000);
+        }
+        
+        function createShockwave(event, button) {
+            const buttonRect = button.getBoundingClientRect();
+            const x = event.clientX - buttonRect.left - 250;
+            const y = event.clientY - buttonRect.top - 250;
+            
+            const shockwave = document.createElement('span');
+            shockwave.classList.add('shockwave');
+            shockwave.style.left = x + 'px';
+            shockwave.style.top = y + 'px';
+            
+            // Set random color for shockwave
+            const colors = ['#7c3aed', '#a855f7', '#ec4899', '#f472b6', '#3b82f6', '#06b6d4', '#10b981', '#f59e0b'];
+            const randomColor = colors[Math.floor(Math.random() * colors.length)];
+            shockwave.style.borderColor = randomColor;
+            
+            button.appendChild(shockwave);
+            
+            setTimeout(() => {
+                shockwave.remove();
+            }, 1000);
+        }
+        
+        function createParticleExplosion(x, y) {
+            const particleContainer = document.createElement('div');
+            particleContainer.classList.add('particle-explosion');
+            particleContainer.style.left = x + 'px';
+            particleContainer.style.top = y + 'px';
+            
+            const colors = ['#7c3aed', '#a855f7', '#ec4899', '#f472b6', '#3b82f6', '#06b6d4', '#10b981', '#f59e0b'];
+            
+            for (let i = 0; i < 25; i++) {
+                const particle = document.createElement('div');
+                particle.classList.add('particle');
+                
+                // Random color
+                const color = colors[Math.floor(Math.random() * colors.length)];
+                particle.style.backgroundColor = color;
+                
+                // Random size
+                const size = Math.random() * 10 + 4;
+                particle.style.width = particle.style.height = size + 'px';
+                
+                // Random direction
+                const angle = Math.random() * Math.PI * 2;
+                const velocity = Math.random() * 8 + 4;
+                const vx = Math.cos(angle) * velocity;
+                const vy = Math.sin(angle) * velocity;
+                
+                particleContainer.appendChild(particle);
+                
+                // Animate particle
+                let posX = 0;
+                let posY = 0;
+                let opacity = 1;
+                
+                const animateParticle = () => {
+                    posX += vx;
+                    posY += vy;
+                    opacity -= 0.02;
+                    
+                    particle.style.transform = `translate(${posX}px, ${posY}px)`;
+                    particle.style.opacity = opacity;
+                    
+                    if (opacity > 0) {
+                        requestAnimationFrame(animateParticle);
+                    } else {
+                        particle.remove();
+                    }
+                };
+                
+                requestAnimationFrame(animateParticle);
+            }
+            
+            document.body.appendChild(particleContainer);
+            
+            setTimeout(() => {
+                particleContainer.remove();
+            }, 1500);
+        }
+        
+        // Add effects to buttons
+        const buttons = document.querySelectorAll('.btn, .purchase-btn, .social-links a, .footer-links a');
+        
+        buttons.forEach(button => {
+            button.addEventListener('click', function(e) {
+                createRipple(e, this);
+                createShockwave(e, this);
+                
+                // Create particle explosion at click position
+                createParticleExplosion(e.clientX, e.clientY);
+                
+                // Add glitch effect to hero title when main buttons are clicked
+                if (this.id === 'inviteBtn' || this.id === 'joinBtn' || this.id === 'testBtn' || this.id === 'purchaseBtn') {
+                    const heroTitle = document.querySelector('.glitch');
+                    heroTitle.style.animation = 'none';
+                    setTimeout(() => {
+                        heroTitle.style.animation = 'glitch 1s infinite';
+                    }, 10);
+                }
+            });
+        });
+        
+        // Add hover effect to feature categories
+        const featureCategories = document.querySelectorAll('.feature-category');
+        
+        featureCategories.forEach(category => {
+            category.addEventListener('mouseenter', function() {
+                // Create a subtle particle effect on hover
+                const categoryRect = this.getBoundingClientRect();
+                const x = categoryRect.left + categoryRect.width / 2;
+                const y = categoryRect.top + categoryRect.height / 2;
+                
+                // Create fewer particles for hover effect
+                const particleContainer = document.createElement('div');
+                particleContainer.classList.add('particle-explosion');
+                particleContainer.style.left = x + 'px';
+                particleContainer.style.top = y + 'px';
+                
+                const colors = ['#7c3aed', '#a855f7', '#ec4899', '#f472b6', '#3b82f6', '#06b6d4'];
+                
+                for (let i = 0; i < 12; i++) {
+                    const particle = document.createElement('div');
+                    particle.classList.add('particle');
+                    
+                    // Random color
+                    const color = colors[Math.floor(Math.random() * colors.length)];
+                    particle.style.backgroundColor = color;
+                    
+                    // Random size
+                    const size = Math.random() * 6 + 3;
+                    particle.style.width = particle.style.height = size + 'px';
+                    
+                    // Random direction
+                    const angle = Math.random() * Math.PI * 2;
+                    const velocity = Math.random() * 5 + 2;
+                    const vx = Math.cos(angle) * velocity;
+                    const vy = Math.sin(angle) * velocity;
+                    
+                    particleContainer.appendChild(particle);
+                    
+                    // Animate particle
+                    let posX = 0;
+                    let posY = 0;
+                    let opacity = 1;
+                    
+                    const animateParticle = () => {
+                        posX += vx;
+                        posY += vy;
+                        opacity -= 0.03;
+                        
+                        particle.style.transform = `translate(${posX}px, ${posY}px)`;
+                        particle.style.opacity = opacity;
+                        
+                        if (opacity > 0) {
+                            requestAnimationFrame(animateParticle);
+                        } else {
+                            particle.remove();
+                        }
+                    };
+                    
+                    requestAnimationFrame(animateParticle);
+                }
+                
+                document.body.appendChild(particleContainer);
+                
+                setTimeout(() => {
+                    particleContainer.remove();
+                }, 1500);
+            });
+        });
+        
+        // Add interactive effect to command items
+        const commandItems = document.querySelectorAll('.command-item');
+        
+        commandItems.forEach(item => {
+            item.addEventListener('click', function() {
+                // Create a small particle explosion at click position
+                const itemRect = this.getBoundingClientRect();
+                const x = itemRect.left + itemRect.width / 2;
+                const y = itemRect.top + itemRect.height / 2;
+                
+                // Create fewer particles for command items
+                const particleContainer = document.createElement('div');
+                particleContainer.classList.add('particle-explosion');
+                particleContainer.style.left = x + 'px';
+                particleContainer.style.top = y + 'px';
+                
+                const colors = ['#3b82f6', '#06b6d4'];
+                
+                for (let i = 0; i < 10; i++) {
+                    const particle = document.createElement('div');
+                    particle.classList.add('particle');
+                    
+                    // Random color
+                    const color = colors[Math.floor(Math.random() * colors.length)];
+                    particle.style.backgroundColor = color;
+                    
+                    // Random size
+                    const size = Math.random() * 5 + 2;
+                    particle.style.width = particle.style.height = size + 'px';
+                    
+                    // Random direction
+                    const angle = Math.random() * Math.PI * 2;
+                    const velocity = Math.random() * 4 + 1;
+                    const vx = Math.cos(angle) * velocity;
+                    const vy = Math.sin(angle) * velocity;
+                    
+                    particleContainer.appendChild(particle);
+                    
+                    // Animate particle
+                    let posX = 0;
+                    let posY = 0;
+                    let opacity = 1;
+                    
+                    const animateParticle = () => {
+                        posX += vx;
+                        posY += vy;
+                        opacity -= 0.04;
+                        
+                        particle.style.transform = `translate(${posX}px, ${posY}px)`;
+                        particle.style.opacity = opacity;
+                        
+                        if (opacity > 0) {
+                            requestAnimationFrame(animateParticle);
+                        } else {
+                            particle.remove();
+                        }
+                    };
+                    
+                    requestAnimationFrame(animateParticle);
+                }
+                
+                document.body.appendChild(particleContainer);
+                
+                setTimeout(() => {
+                    particleContainer.remove();
+                }, 1200);
+                
+                // Add a temporary highlight effect
+                this.style.background = 'rgba(124, 58, 237, 0.3)';
+                setTimeout(() => {
+                    this.style.background = '';
+                }, 500);
+            });
+        });
+        
+        // Add a random glitch effect to the hero title occasionally
+        setInterval(() => {
+            if (Math.random() > 0.85) { // 15% chance every interval
+                const heroTitle = document.querySelector('.glitch');
+                heroTitle.style.animation = 'none';
+                setTimeout(() => {
+                    heroTitle.style.animation = 'glitch 1s infinite';
+                }, 10);
+            }
+        }, 7000);
+        
+        // Enhanced scroll animations
+        let lastScroll = 0;
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('nav');
+            const currentScroll = window.pageYOffset;
+            
+            if (currentScroll > 100) {
+                nav.style.background = 'rgba(10, 10, 26, 0.98)';
+                nav.style.boxShadow = '0 10px 40px rgba(0, 0, 0, 0.6), 0 0 30px rgba(124, 58, 237, 0.5)';
+            } else {
+                nav.style.background = 'rgba(10, 10, 26, 0.95)';
+                nav.style.boxShadow = '0 10px 40px rgba(0, 0, 0, 0.6), 0 0 30px rgba(124, 58, 237, 0.5)';
+            }
+            
+            lastScroll = currentScroll;
+        });
+        
+        // Add intersection observer for scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const scrollObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe all cards for scroll animations
+        document.querySelectorAll('.step-card, .feature-category, .reaction-card, .tier-card, .donation-tier').forEach(card => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(40px)';
+            card.style.transition = 'opacity 1s ease, transform 1s ease';
+            scrollObserver.observe(card);
+        });
+        
+        // Add keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                navLinks.classList.remove('active');
+            }
+        });
+        
+        // Add performance monitoring
+        let performanceTimer;
+        window.addEventListener('scroll', () => {
+            if (performanceTimer) {
+                clearTimeout(performanceTimer);
+            }
+            performanceTimer = setTimeout(() => {
+                // Reduce animations during scroll for better performance
+                document.body.style.setProperty('--animation-play-state', 'paused');
+            }, 100);
+        });
+        
+        window.addEventListener('scrollend', () => {
+            // Resume animations after scroll
+            document.body.style.setProperty('--animation-play-state', 'running');
+        });
+    </script>
+</body>
+</html>
